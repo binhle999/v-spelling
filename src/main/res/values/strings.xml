@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">VSpelling</string>[+]
-    <string name="gvhd_label">[ + ] Giáo viên hướng dẫn:</string>
-    <string name="gvhd_full_name">Ths. Lê Minh Hóa</string>
-    <string name="svth_label">[ + ] Sinh viên thực hiện:</string>
-    <string name="svth_full_name">Sv. Lê Văn Bình - D12DCCN002</string>
-</resources>
