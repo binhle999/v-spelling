@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_alphabet_detail"
+    tools:context="com.binhle.vspelling.Activity.SpellingScreen"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_home"
+                android:layout_weight="1"
+                android:src="@drawable/rsz_home" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bê"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word1" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bé"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word2" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bi"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word3" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bị"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word4" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bí"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word5" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bộ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word6" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Ca"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word7" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cá"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word8" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cò"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word9" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cô"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word10" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cỏ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word11" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cờ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word12" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cụ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word13" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cú"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word14" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Đi"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word15" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Đỗ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word16" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Đó"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word17" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dê"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word18" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dễ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word19" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dợ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word20" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dù"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word21" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dư"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word22" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Gà"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word23" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Gừ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word24" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Hề"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word25" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Hồ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word26" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Hy"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word27" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Kệ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word28" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Kỳ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word29" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Kỵ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word30" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Ký"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word31" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lọ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word32" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lu"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word33" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lư"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word34" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lũ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word35" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mạ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word36" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mè"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word37" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mẹ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word38" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mì"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word39" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mơ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word40" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Mỹ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word41" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="No"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word42" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Nữ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word43" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Rể"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word44" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Rễ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word45" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sả"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word46" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sẻ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word47" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sĩ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word48" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Số"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word49" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sử"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word50" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sứ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word51" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tã"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word52" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="To"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word53" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tổ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word54" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tủ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word55" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tự"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word56" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tỷ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word57" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vẽ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word58" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vỉ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word59" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1">
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vỏ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word60" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vở"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word61" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vớ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word62" />
+
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vỡ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word63" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Võ"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word64" />
+            <com.binhle.vspelling.Common.CustomizeViews.AutoResizeTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Xe"
+                android:maxLines="1"
+                android:textSize="100sp"
+                android:id="@+id/tv_word65" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
