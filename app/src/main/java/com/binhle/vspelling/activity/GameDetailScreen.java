@@ -1,7 +1,7 @@
-package com.binhle.vspelling.Activity;
+package com.binhle.vspelling.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.binhle.vspelling.R;
 

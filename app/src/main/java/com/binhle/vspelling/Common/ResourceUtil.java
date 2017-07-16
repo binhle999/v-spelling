@@ -1,4 +1,4 @@
-package com.binhle.vspelling.Common;
+package com.binhle.vspelling.common;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,17 +8,33 @@ import android.util.Log;
  * Created by BinhLe on 4/16/2017.
  */
 public class ResourceUtil {
+    /**
+     * Get entry name of resource
+     *
+     * @param context
+     * @param resId
+     * @return
+     */
     public static String getResourceEntryName(Context context, int resId) {
         String name = "";
         try {
             name = context.getResources().getResourceEntryName(resId);
             Log.i("Resource Name", name);
         } catch (Exception e) {
-            Log.e("GetResourceName Error", String.format(ErrorConstants.RESOURCE_NAME_NOT_FOUND, resId));
+            Log.e("GetResourceName Error", String.format(ErrorConstants.RESOURCE_NAME_NOT_FOUND,
+                                                         resId));
         }
         return name;
     }
 
+    /**
+     * Get resource id
+     *
+     * @param context
+     * @param type
+     * @param name
+     * @return
+     */
     public static int getResourceId(Context context, String type, String name) {
         int result = -1;
         try {
@@ -31,16 +47,30 @@ public class ResourceUtil {
         return result;
     }
 
+    /**
+     * Get sound resource id
+     *
+     * @param activity
+     * @param soundName
+     * @return
+     */
     public static int getSoundResource(Activity activity, String soundName) {
-        return getResourceId(activity.getBaseContext(),
-                String.valueOf(CommonType.ResourceType.RAW).toLowerCase(),
-                soundName);
+        return getResourceId(activity.getBaseContext(), String.valueOf(CommonType.ResourceType
+                                                                               .RAW).toLowerCase
+                (), soundName);
     }
-    // Get image resource 
+
+    /**
+     * Get image resource id
+     *
+     * @param activity
+     * @param imageName
+     * @return
+     */
     public static int getImageResource(Activity activity, String imageName) {
-        return getResourceId(activity.getBaseContext(),
-                String.valueOf(CommonType.ResourceType.DRAWABLE).toLowerCase(),
-                imageName);
+        return getResourceId(activity.getBaseContext(), String.valueOf(CommonType.ResourceType
+                                                                               .DRAWABLE)
+                .toLowerCase(), imageName);
     }
 }
 

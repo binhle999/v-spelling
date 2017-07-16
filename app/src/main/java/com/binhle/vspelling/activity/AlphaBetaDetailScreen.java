@@ -1,4 +1,4 @@
-package com.binhle.vspelling.Activity;
+package com.binhle.vspelling.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,17 +7,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.binhle.vspelling.Common.CommonType;
-import com.binhle.vspelling.Common.MediaPlayerUtil;
-import com.binhle.vspelling.Common.ResourceUtil;
 import com.binhle.vspelling.Logic.AlphaBetaDetailLogic;
 import com.binhle.vspelling.Logic.Parameter.AlphaBetaDetailCurrentData;
 import com.binhle.vspelling.Logic.Parameter.AlphaBetaDetailParam;
 import com.binhle.vspelling.Logic.Parameter.AlphaBetaDetailResult;
-import com.binhle.vspelling.Model.CustomMedia;
-import com.binhle.vspelling.Model.Letter;
-import com.binhle.vspelling.Model.Word;
 import com.binhle.vspelling.R;
+import com.binhle.vspelling.common.CommonType;
+import com.binhle.vspelling.common.MediaPlayerUtil;
+import com.binhle.vspelling.common.ResourceUtil;
+import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.MediaBase;
+import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -155,12 +155,12 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
     /**
      * Set content for image view
      *
-     * @param customMedia
+     * @param mediaBase
      */
-    private void setImageViewData(CustomMedia customMedia) {
-        ImageView imageView = (ImageView) this.findViewById(customMedia.getViewId());
-        if (customMedia.getImageResourceId() > 0) {
-            imageView.setImageResource(customMedia.getImageResourceId());
+    private void setImageViewData(MediaBase mediaBase) {
+        ImageView imageView = (ImageView) this.findViewById(mediaBase.getViewId());
+        if (mediaBase.getImageResourceId() > 0) {
+            imageView.setImageResource(mediaBase.getImageResourceId());
         } else {
             imageView.setImageResource(0);
         }

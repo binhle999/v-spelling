@@ -1,13 +1,14 @@
 package com.binhle.vspelling.Logic;
 
 import android.app.Activity;
-import com.binhle.vspelling.Common.Service.SpellingService;
+
 import com.binhle.vspelling.Logic.Parameter.AlphaBetaDetailParam;
 import com.binhle.vspelling.Logic.Parameter.AlphaBetaDetailResult;
-import com.binhle.vspelling.Model.Letter;
-import com.binhle.vspelling.Model.Word;
+import com.binhle.vspelling.common.Service.SpellingService;
+import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.Word;
+
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by BinhLe on 5/1/2017.

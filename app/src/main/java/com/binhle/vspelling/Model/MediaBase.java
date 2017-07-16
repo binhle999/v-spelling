@@ -1,4 +1,4 @@
-package com.binhle.vspelling.Model;
+package com.binhle.vspelling.model;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
@@ -6,12 +6,12 @@ import android.media.MediaPlayer;
 /**
  * Created by BinhLe on 6/17/2017.
  */
-public class CustomMedia {
+public class MediaBase {
     private MediaPlayer mediaPlayer;
     private int imageResourceId;
     private int viewId;
 
-    public CustomMedia() {
+    public MediaBase() {
     }
 
     public MediaPlayer getMediaPlayer() {

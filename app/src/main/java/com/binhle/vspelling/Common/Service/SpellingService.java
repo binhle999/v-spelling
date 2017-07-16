@@ -1,15 +1,17 @@
-package com.binhle.vspelling.Common.Service;
+package com.binhle.vspelling.common.Service;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.binhle.vspelling.Model.Letter;
-import com.binhle.vspelling.Model.Word;
+import com.binhle.vspelling.common.Constants;
+import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.SpellingWord;
+import com.binhle.vspelling.model.Word;
 import com.binhle.vspelling.dao.Database;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -117,4 +119,39 @@ public class SpellingService {
         }
         return resultMap;
     }
+
+    /**
+     * Select spelling-words by page index
+     * @param pageIndex
+     * @return
+     */
+    public Map<String, SpellingWord> selectSpellingWordsByIndex(int pageIndex) {
+        Map<String, SpellingWord> spellingWords = new LinkedHashMap<>();
+        // Calculate offset to query data
+        int offset = pageIndex - 1;
+        // Build query statement
+        StringBuilder mainQuery = new StringBuilder();
+        mainQuery.append("SELECT id,name,content,image,sound FROM 'spelling-word'");
+        mainQuery.append(" ORDER BY id");
+        mainQuery.append(" LIMIT ").append(pageIndex * Constants.NUMBER_OF_WORD_PER_PAGE);
+        mainQuery.append(" OFFSET ").append(offset);
+        // Fill data
+        String name, content, image, sound;
+        int id;
+        SpellingWord spellingWord;
+        Cursor cursor = database.rawQuery(mainQuery.toString(), null);
+        // Loop to fill data into map
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToPosition(i);
+            id = cursor.getInt(0);
+            name= cursor.getString(1);
+            content = cursor.getString(2);
+            image = cursor.getString(3);
+            sound = cursor.getString(4);
+            spellingWord = new SpellingWord(id, name, content, image, sound);
+            spellingWords.put(name, spellingWord);
+        }
+        return spellingWords;
+    }
+
 }

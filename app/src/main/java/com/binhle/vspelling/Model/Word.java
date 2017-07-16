@@ -1,9 +1,9 @@
-package com.binhle.vspelling.Model;
+package com.binhle.vspelling.model;
 
 /**
  * Created by BinhLe on 5/1/2017.
  */
-public class Word extends CustomMedia {
+public class Word extends MediaBase {
     private String id;
     private String name;
     private String displayText;

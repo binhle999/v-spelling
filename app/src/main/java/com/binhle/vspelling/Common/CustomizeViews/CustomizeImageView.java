@@ -1,4 +1,4 @@
-package com.binhle.vspelling.Common.CustomizeViews;
+package com.binhle.vspelling.common.CustomizeViews;
 
 import android.content.Context;
 import android.util.AttributeSet;

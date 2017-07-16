@@ -7,18 +7,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainScreen">
+        <activity android:name=".activity.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.AlphaBetScreen"/>
-        <activity android:name=".Activity.AlphaBetaDetailScreen"/>
-        <activity android:name=".Activity.SpellingScreen"></activity>
-        <activity android:name=".Activity.SpellingDetailScreen" />
-        <activity android:name=".Activity.GameDetailScreen" />
+        <activity android:name=".activity.AlphaBetScreen"/>
+        <activity android:name=".activity.AlphaBetaDetailScreen"/>
+        <activity android:name=".activity.SpellingScreen"></activity>
+        <activity android:name=".activity.SpellingDetailScreen" />
+        <activity android:name=".activity.GameDetailScreen" />
     </application>
 
 </manifest>

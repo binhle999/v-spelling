@@ -3,7 +3,7 @@ package com.binhle.vspelling.HandleEvent.Implementation;
 import android.content.Context;
 import android.content.Intent;
 
-import com.binhle.vspelling.Activity.MainScreen;
+import com.binhle.vspelling.activity.MainScreen;
 
 /**
  * Created by BinhLe on 5/1/2017.

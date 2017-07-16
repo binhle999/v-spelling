@@ -27,37 +27,37 @@
             android:layout_weight="1"
             android:gravity="center">
 
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_home"
                 android:layout_weight="1"
                 android:src="@drawable/rsz_home"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_a"
                 android:layout_weight="1"
                 android:src="@drawable/letter_a"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_aw"
                 android:layout_weight="1"
                 android:src="@drawable/letter_aw"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_aa"
                 android:layout_weight="1"
                 android:src="@drawable/letter_aa"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_b"
                 android:layout_weight="1"
                 android:src="@drawable/letter_b"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_c"
@@ -71,37 +71,37 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center">
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_d"
                 android:layout_weight="1"
                 android:src="@drawable/letter_d"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_dd"
                 android:layout_weight="1"
                 android:src="@drawable/letter_dd"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_e"
                 android:layout_weight="1"
                 android:src="@drawable/letter_e"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_ee"
                 android:layout_weight="1"
                 android:src="@drawable/letter_ee"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_g"
                 android:layout_weight="1"
                 android:src="@drawable/letter_g"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_h"
@@ -117,37 +117,37 @@
             android:layout_weight="1"
             android:gravity="center">
 
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_i"
                 android:layout_weight="1"
                 android:src="@drawable/letter_i"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_k"
                 android:layout_weight="1"
                 android:src="@drawable/letter_k"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_l"
                 android:layout_weight="1"
                 android:src="@drawable/letter_l"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_m"
                 android:layout_weight="1"
                 android:src="@drawable/letter_m"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_n"
                 android:layout_weight="1"
                 android:src="@drawable/letter_n"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_o"
@@ -162,37 +162,37 @@
             android:layout_weight="1"
             android:gravity="center">
 
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_oo"
                 android:layout_weight="1"
                 android:src="@drawable/letter_oo"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_ow"
                 android:layout_weight="1"
                 android:src="@drawable/letter_ow"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_p"
                 android:layout_weight="1"
                 android:src="@drawable/letter_p"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_q"
                 android:layout_weight="1"
                 android:src="@drawable/letter_q"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_r"
                 android:layout_weight="1"
                 android:src="@drawable/letter_r"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_s"
@@ -206,37 +206,37 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center">
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_t"
                 android:layout_weight="1"
                 android:src="@drawable/letter_t"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_u"
                 android:layout_weight="1"
                 android:src="@drawable/letter_u"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_uw"
                 android:layout_weight="1"
                 android:src="@drawable/letter_uw"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_v"
                 android:layout_weight="1"
                 android:src="@drawable/letter_v"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_x"
                 android:layout_weight="1"
                 android:src="@drawable/letter_x"/>
-            <com.binhle.vspelling.Common.CustomizeViews.CustomizeImageView
+            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_letter_y"

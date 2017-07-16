@@ -1,11 +1,9 @@
 package com.binhle.vspelling.Logic.Parameter;
 
-import com.binhle.vspelling.Model.Letter;
-import com.binhle.vspelling.Model.Word;
+import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.Word;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by BinhLe on 5/27/2017.

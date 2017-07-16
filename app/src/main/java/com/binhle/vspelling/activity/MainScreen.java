@@ -1,9 +1,7 @@
-package com.binhle.vspelling.Activity;
+package com.binhle.vspelling.activity;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,16 +10,13 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.binhle.vspelling.Common.Constants;
-import com.binhle.vspelling.Common.MediaPlayerConstants;
-import com.binhle.vspelling.Model.Word;
 import com.binhle.vspelling.R;
-import com.binhle.vspelling.dao.Database;
+import com.binhle.vspelling.common.Constants;
+import com.binhle.vspelling.common.MediaPlayerConstants;
+import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MainScreen extends AppCompatActivity {
 

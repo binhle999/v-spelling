@@ -1,9 +1,9 @@
 package com.binhle.vspelling.HandleEvent;
 
-import com.binhle.vspelling.Common.Constants;
 import com.binhle.vspelling.HandleEvent.Implementation.AlphaBetDetailEventHandler;
 import com.binhle.vspelling.HandleEvent.Implementation.AlphaBetEventHandler;
 import com.binhle.vspelling.HandleEvent.Implementation.SpellingListEventHandler;
+import com.binhle.vspelling.common.Constants;
 
 /**
  * Created by BinhLe on 4/16/2017.

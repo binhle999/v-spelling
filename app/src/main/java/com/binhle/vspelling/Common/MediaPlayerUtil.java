@@ -1,4 +1,4 @@
-package com.binhle.vspelling.Common;
+package com.binhle.vspelling.common;
 
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -6,7 +6,6 @@ import android.net.Uri;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by BinhLe on 4/9/2017.

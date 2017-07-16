@@ -4,12 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
-import com.binhle.vspelling.Activity.AlphaBetaDetailScreen;
-import com.binhle.vspelling.Common.CommonType;
-import com.binhle.vspelling.Common.ResourceUtil;
-import com.binhle.vspelling.R;
-
 import com.binhle.vspelling.HandleEvent.CustomizeEventHandler;
+import com.binhle.vspelling.R;
+import com.binhle.vspelling.activity.AlphaBetaDetailScreen;
+import com.binhle.vspelling.common.CommonType;
+import com.binhle.vspelling.common.ResourceUtil;
 
 /**
  * Created by BinhLe on 4/16/2017.

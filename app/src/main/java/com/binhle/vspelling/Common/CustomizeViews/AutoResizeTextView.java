@@ -1,4 +1,4 @@
-package com.binhle.vspelling.Common.CustomizeViews;
+package com.binhle.vspelling.common.CustomizeViews;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.binhle.vspelling.HandleEvent.CustomizeEventHandler;
-import com.binhle.vspelling.HandleEvent.EventManager;
 
 public class AutoResizeTextView extends TextView implements View.OnClickListener {
 
@@ -65,8 +64,8 @@ public class AutoResizeTextView extends TextView implements View.OnClickListener
         super(context);
         initialize();
         this.context = context;
-        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
-        setOnClickListener(this);
+//        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
+//        setOnClickListener(this);
     }
 
     public AutoResizeTextView(Context context, AttributeSet attrs) {
@@ -74,8 +73,8 @@ public class AutoResizeTextView extends TextView implements View.OnClickListener
         initialize();
         this.context = context;
         this.attrs = attrs;
-        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
-        setOnClickListener(this);
+//        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
+//        setOnClickListener(this);
     }
 
     public AutoResizeTextView(Context context, AttributeSet attrs, int defStyle) {
@@ -83,8 +82,8 @@ public class AutoResizeTextView extends TextView implements View.OnClickListener
         initialize();
         this.context = context;
         this.attrs = attrs;
-        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
-        setOnClickListener(this);
+//        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
+//        setOnClickListener(this);
     }
 
     @Override

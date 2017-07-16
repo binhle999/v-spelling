@@ -1,9 +1,9 @@
-package com.binhle.vspelling.Model;
+package com.binhle.vspelling.model;
 
 /**
  * Created by BinhLe on 5/1/2017.
  */
-public class Letter extends CustomMedia {
+public class Letter extends MediaBase {
     private String id;
     private String name;
     private String description;
