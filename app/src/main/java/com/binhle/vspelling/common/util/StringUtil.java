@@ -1,9 +1,9 @@
-package com.binhle.vspelling.common.extension;
+package com.binhle.vspelling.common.util;
 
 /**
  * Created by BinhLe on 7/16/2017.
  */
-public final class StringExtension {
+public final class StringUtil {
 
     /**
      * Check string is null or empty.

@@ -27,14 +27,14 @@
             android:gravity="center"
             android:layout_weight="1">
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_home"
                 android:layout_weight="1"
                 android:src="@drawable/rsz_home" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -44,7 +44,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word1" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -55,7 +55,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word2" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -65,7 +65,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word3" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -75,7 +75,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word4" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -93,7 +93,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -103,7 +103,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word6" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -113,7 +113,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word7" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -124,7 +124,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word8" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -134,7 +134,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word9" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -144,7 +144,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word10" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -161,7 +161,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -171,7 +171,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word12" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -181,7 +181,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word13" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -192,7 +192,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word14" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -202,7 +202,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word15" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -212,7 +212,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word16" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -229,7 +229,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -239,7 +239,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word18" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -249,7 +249,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word19" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -260,7 +260,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word20" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -270,7 +270,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word21" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -280,7 +280,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word22" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -297,7 +297,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -307,7 +307,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word24" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -317,7 +317,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word25" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -328,7 +328,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word26" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -338,7 +338,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word27" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -348,7 +348,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word28" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -365,7 +365,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -375,7 +375,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word30" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -385,7 +385,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word31" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -396,7 +396,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word32" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -406,7 +406,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word33" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -416,7 +416,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word34" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -433,7 +433,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -443,7 +443,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word36" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -453,7 +453,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word37" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -464,7 +464,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word38" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -474,7 +474,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word39" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -484,7 +484,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word40" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -501,7 +501,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -511,7 +511,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word42" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -521,7 +521,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word43" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -532,7 +532,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word44" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -542,7 +542,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word45" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -552,7 +552,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word46" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -569,7 +569,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -579,7 +579,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word48" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -589,7 +589,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word49" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -600,7 +600,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word50" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -610,7 +610,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word51" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -620,7 +620,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word52" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -637,7 +637,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -647,7 +647,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word54" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -657,7 +657,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word55" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -668,7 +668,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word56" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -678,7 +678,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word57" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -688,7 +688,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word58" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -705,7 +705,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_weight="1">
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -715,7 +715,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word60" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -725,7 +725,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word61" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -736,7 +736,7 @@
                 android:textSize="100sp"
                 android:id="@+id/tv_word62" />
 
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -746,7 +746,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word63" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -756,7 +756,7 @@
                 android:maxLines="1"
                 android:textSize="100sp"
                 android:id="@+id/tv_word64" />
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"

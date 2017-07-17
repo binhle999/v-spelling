@@ -1,4 +1,4 @@
-package com.binhle.vspelling.common.CustomizeViews;
+package com.binhle.vspelling.common.customize;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,9 +14,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
-import com.binhle.vspelling.HandleEvent.CustomizeEventHandler;
 
-public class AutoResizeTextView extends TextView implements View.OnClickListener {
+public class AutoResizeTextView extends TextView {
 
     private interface SizeTester {
         /**
@@ -58,7 +57,6 @@ public class AutoResizeTextView extends TextView implements View.OnClickListener
 
     private Context context;
     private AttributeSet attrs;
-    CustomizeEventHandler customizeEventHandler;
 
     public AutoResizeTextView(Context context) {
         super(context);
@@ -84,12 +82,6 @@ public class AutoResizeTextView extends TextView implements View.OnClickListener
         this.attrs = attrs;
 //        customizeEventHandler = EventManager.getEventHandler(context.getClass().getSimpleName());
 //        setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        customizeEventHandler.handleTextViewEvent(context, v);
-        customizeEventHandler.handleImageViewEvent(context, v);
     }
 
     private void initialize() {

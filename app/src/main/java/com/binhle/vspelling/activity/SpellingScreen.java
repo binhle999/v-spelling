@@ -9,10 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.binhle.vspelling.R;
-import com.binhle.vspelling.common.ActivityHelper;
-import com.binhle.vspelling.common.Constants;
-import com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView;
-import com.binhle.vspelling.common.ResourceUtil;
+import com.binhle.vspelling.common.util.ActivityHelper;
+import com.binhle.vspelling.common.constant.Constants;
+import com.binhle.vspelling.common.customize.AutoResizeTextView;
+import com.binhle.vspelling.common.util.ResourceUtil;
+import com.binhle.vspelling.model.SpellingBase;
 import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.provider.DataProvider;
 
@@ -22,7 +23,7 @@ import java.util.Map;
 
 public class SpellingScreen extends AppCompatActivity {
 
-    private Map<String, SpellingWord> wordsMap;
+    private Map<String, SpellingBase> wordsMap;
     private List<View> listOfViews;
     private Map<String, String> wordViews;
 

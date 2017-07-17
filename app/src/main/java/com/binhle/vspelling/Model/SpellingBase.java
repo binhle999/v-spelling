@@ -1,9 +1,5 @@
 package com.binhle.vspelling.model;
 
-import android.app.Activity;
-
-import com.binhle.vspelling.common.ResourceUtil;
-
 /**
  * The SpellingBase class
  * Created by BinhLe on 7/15/2017.

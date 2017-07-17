@@ -1,4 +1,4 @@
-package com.binhle.vspelling.common;
+package com.binhle.vspelling.common.constant;
 
 /**
  * Created by BinhLe on 4/9/2017.

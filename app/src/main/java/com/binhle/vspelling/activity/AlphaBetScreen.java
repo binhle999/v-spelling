@@ -9,9 +9,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.binhle.vspelling.R;
-import com.binhle.vspelling.common.ActivityHelper;
-import com.binhle.vspelling.common.Constants;
+import com.binhle.vspelling.common.util.ActivityHelper;
+import com.binhle.vspelling.common.constant.Constants;
 import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.SpellingBase;
 import com.binhle.vspelling.provider.DataProvider;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class AlphaBetScreen extends AppCompatActivity {
 
     private ImageView homeView;
     private List<View> viewList;
-    private Map<String, Letter> letterMap;
+    private Map<String, SpellingBase> letterMap;
     private Map<Integer, String> letterViews;
 
     @Override

@@ -203,7 +203,7 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:src="@drawable/baf"/>
-        <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+        <com.binhle.vspelling.common.customize.AutoResizeTextView
             android:id="@+id/tv_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -232,7 +232,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:id="@+id/similar1_img"/>
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -252,7 +252,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:id="@+id/similar2_img"/>
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -272,7 +272,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:id="@+id/similar3_img"/>
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -292,7 +292,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:id="@+id/similar4_img"/>
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -312,7 +312,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:id="@+id/similar5_img"/>
-            <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"

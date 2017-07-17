@@ -1,8 +1,11 @@
-package com.binhle.vspelling.common;
+package com.binhle.vspelling.common.util;
 
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+
+import com.binhle.vspelling.common.constant.CommonType;
+import com.binhle.vspelling.common.constant.ErrorConstants;
 
 /**
  * Created by BinhLe on 4/16/2017.

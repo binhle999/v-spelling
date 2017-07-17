@@ -1,14 +1,14 @@
-package com.binhle.vspelling.common.Service;
+package com.binhle.vspelling.dao;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.binhle.vspelling.common.Constants;
+import com.binhle.vspelling.common.constant.Constants;
 import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.SpellingBase;
 import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.model.Word;
-import com.binhle.vspelling.dao.Database;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -58,8 +58,8 @@ public class SpellingService {
      * @param pageIndex
      * @return
      */
-    public Map<String, SpellingWord> selectSpellingWordsByIndex(int pageIndex) {
-        Map<String, SpellingWord> spellingWords = new LinkedHashMap<>();
+    public Map<String, SpellingBase> selectSpellingWordsByIndex(int pageIndex) {
+        Map<String, SpellingBase> spellingWords = new LinkedHashMap<>();
         // Calculate offset to query data
         int offset = pageIndex - 1;
         // Build query statement
@@ -93,8 +93,8 @@ public class SpellingService {
      * @param numberOfLetters
      * @return
      */
-    public Map<String, Letter> selectLetters(int pageIndex, int numberOfLetters) {
-        Map<String, Letter> letters = new LinkedHashMap<>();
+    public Map<String, SpellingBase> selectLetters(int pageIndex, int numberOfLetters) {
+        Map<String, SpellingBase> letters = new LinkedHashMap<>();
         // Calculate offset to query data
         int offset = pageIndex - 1;
         // Build query statement
@@ -123,4 +123,40 @@ public class SpellingService {
         return letters;
     }
 
+    /**
+     * Select related words
+     * @param letterName
+     * @param pageIndex
+     * @param numberOfWords
+     * @return
+     */
+    public List<SpellingBase> selectRelatedWords(String letterName, int pageIndex, int numberOfWords) {
+        List<SpellingBase> words = new ArrayList<>();
+        // Calculate offset to query data
+        int offset = pageIndex - 1;
+        // Build query statement
+        StringBuilder mainQuery = new StringBuilder();
+        mainQuery.append("SELECT id,name,content,image,sound FROM word");
+        mainQuery.append(" WHERE letter='").append(letterName).append("'");
+        mainQuery.append(" LIMIT ").append(numberOfWords);
+        mainQuery.append(" OFFSET ").append(offset);
+
+        // Fill data
+        String name, content, image, sound;
+        int id;
+        Word word;
+        Cursor cursor = database.rawQuery(mainQuery.toString(), null);
+        // Loop to fill data into map
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToPosition(i);
+            id = cursor.getInt(0);
+            name= cursor.getString(1);
+            content = cursor.getString(2);
+            image = cursor.getString(3);
+            sound = cursor.getString(4);
+            word = new Word(id, name, content, image, sound);
+            words.add(word);
+        }
+        return words;
+    }
 }

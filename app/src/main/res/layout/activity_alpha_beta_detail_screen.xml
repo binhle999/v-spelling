@@ -27,7 +27,7 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1">
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_home"
@@ -35,14 +35,14 @@
                 android:src="@drawable/rsz_home"
                 android:layout_weight="1" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_pre2"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_pre1"
@@ -50,7 +50,7 @@
 
                 android:layout_weight="1" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_current"
@@ -58,7 +58,7 @@
 
                 android:layout_weight="1" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_next1"
@@ -66,14 +66,14 @@
 
                 android:layout_weight="1" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_next2"
 
                 android:layout_weight="1" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/img_back"
@@ -95,21 +95,21 @@
             android:layout_gravity="center"
             android:layout_weight="1">
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:id="@+id/img_pre_letter"
                 android:layout_weight="1"
                 android:src="@drawable/nback" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/img_main_letter"
                 android:layout_weight="10"
                 android:src="@drawable/letter_a" />
 
-            <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+            <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:id="@+id/img_next_letter"
@@ -136,13 +136,13 @@
                 android:layout_weight="1"
                 android:layout_marginRight="10dp">
 
-                <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:id="@+id/img_first"
                     android:layout_weight="2"/>
 
-                <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -160,13 +160,13 @@
                 android:id="@+id/layout_second_hint"
                 android:layout_marginRight="10dp">
 
-                <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:id="@+id/img_second"
                     android:layout_weight="2"/>
 
-                <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -182,13 +182,13 @@
                 android:id="@+id/layout_third_hint"
                 android:layout_weight="1">
 
-                <com.binhle.vspelling.common.CustomizeViews.CustomizeImageView
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:id="@+id/img_third"
                     android:layout_weight="2"/>
 
-                <com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

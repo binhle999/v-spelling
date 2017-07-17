@@ -10,11 +10,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.binhle.vspelling.R;
-import com.binhle.vspelling.common.ActivityHelper;
-import com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView;
-import com.binhle.vspelling.common.ResourceUtil;
-import com.binhle.vspelling.common.Util;
-import com.binhle.vspelling.common.extension.StringExtension;
+import com.binhle.vspelling.common.util.ActivityHelper;
+import com.binhle.vspelling.common.customize.AutoResizeTextView;
+import com.binhle.vspelling.common.util.ResourceUtil;
+import com.binhle.vspelling.common.util.Util;
+import com.binhle.vspelling.common.util.StringUtil;
+import com.binhle.vspelling.model.SpellingBase;
 import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.provider.DataManager;
 import com.binhle.vspelling.provider.DataProvider;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SpellingDetailScreen extends AppCompatActivity {
+
     private Map<String, LinearLayout> similarLayouts;
     private LinearLayout mainLayout;
     private Map<String, SpellingWord> currentSimilarWords;
@@ -97,18 +99,18 @@ public class SpellingDetailScreen extends AppCompatActivity {
      * Put data into main view
      */
     private void putMainViewData() {
-        Map<String, SpellingWord> spellingWordMap = dataManager.getSpellingWordMap();
-        if (!StringExtension.isNullOrEmpty(currentWord) && !Util.isNull(mainLayout) &&
+        Map<String, SpellingBase> spellingWordMap = dataManager.getSpellingWordMap();
+        if (!StringUtil.isNullOrEmpty(currentWord) && !Util.isNull(mainLayout) &&
                 !Util.isNull(spellingWordMap)) {
-            SpellingWord spellingWord = spellingWordMap.get(currentWord);
-            ImageView imageViewMain = (ImageView) ActivityHelper.
+            SpellingWord word = (SpellingWord) spellingWordMap.get(currentWord);
+            ImageView imageView = (ImageView) ActivityHelper.
                     fetchAllChildren(mainLayout, AppCompatImageView.class).get(0);
-            TextView textViewMain = (TextView) ActivityHelper.
+            TextView textView = (TextView) ActivityHelper.
                     fetchAllChildren(mainLayout, AutoResizeTextView.class).get(0);
-//            ActivityHelper.putDataView(imageViewMain, spellingWord, true, false);
-//            ActivityHelper.putDataView(textViewMain, spellingWord, false, false);
+            ActivityHelper.updateImageResource(imageView, word.getImage());
+            ActivityHelper.updateText(textView, word.getContent());
             String mainId = ResourceUtil.getResourceEntryName(this, mainLayout.getId());
-            updateCurrentData(mainId, spellingWord);
+            updateCurrentData(mainId, word);
         }
     }
 
@@ -116,8 +118,8 @@ public class SpellingDetailScreen extends AppCompatActivity {
      * Put data into similar words
      */
     private void putSimilarData() {
-        Map<String, SpellingWord> spellingWordMap = dataManager.getSpellingWordMap();
-        if (!StringExtension.isNullOrEmpty(currentWord) && !Util.isNull(similarLayouts) &&
+        Map<String, SpellingBase> spellingWordMap = dataManager.getSpellingWordMap();
+        if (!StringUtil.isNullOrEmpty(currentWord) && !Util.isNull(similarLayouts) &&
                 !Util.isNull(spellingWordMap)) {
             List<String> similarWordName = dataManager.
                     getSimilarSpellings(currentWord, similarLayouts.size());
@@ -137,9 +139,9 @@ public class SpellingDetailScreen extends AppCompatActivity {
                 textView = (TextView) ActivityHelper.
                         fetchAllChildren(linearLayout, AutoResizeTextView.class).get(0);
                 wordName = similarWordName.get(index);
-                word = spellingWordMap.get(wordName);
-//                ActivityHelper.putDataView(imageView, word, true, true);
-//                ActivityHelper.putDataView(textView, word, false, false);
+                word = (SpellingWord) spellingWordMap.get(wordName);
+                ActivityHelper.updateImageResource(imageView, word.getImage());
+                ActivityHelper.updateText(textView, word.getContent());
                 updateCurrentData(similarId, word);
             }
         }

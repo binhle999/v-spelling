@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.binhle.vspelling.R;
-import com.binhle.vspelling.common.Constants;
-import com.binhle.vspelling.common.MediaPlayerConstants;
+import com.binhle.vspelling.common.constant.Constants;
+import com.binhle.vspelling.common.constant.MediaPlayerConstants;
 import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;

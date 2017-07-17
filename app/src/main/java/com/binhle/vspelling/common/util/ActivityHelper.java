@@ -1,18 +1,11 @@
-package com.binhle.vspelling.common;
+package com.binhle.vspelling.common.util;
 
 import android.app.Activity;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.TintContextWrapper;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView;
-import com.binhle.vspelling.model.SpellingBase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +46,15 @@ public final class ActivityHelper {
         Activity activity = getActivityByView(view);
         int imageResId = ResourceUtil.getImageResource(activity, imageId);
         view.setImageResource(imageResId);
+    }
+
+    /**
+     * Update text for textview
+     * @param view
+     * @param text
+     */
+    public static void updateText(TextView view, String text) {
+        view.setText(text);
     }
 
     /**
