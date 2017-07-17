@@ -1,5 +1,6 @@
 package com.binhle.vspelling.activity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 import com.binhle.vspelling.R;
 import com.binhle.vspelling.common.ActivityHelper;
 import com.binhle.vspelling.common.CustomizeViews.AutoResizeTextView;
-import com.binhle.vspelling.common.MediaPlayerUtil;
 import com.binhle.vspelling.common.ResourceUtil;
 import com.binhle.vspelling.common.Util;
 import com.binhle.vspelling.common.extension.StringExtension;
@@ -102,11 +102,11 @@ public class SpellingDetailScreen extends AppCompatActivity {
                 !Util.isNull(spellingWordMap)) {
             SpellingWord spellingWord = spellingWordMap.get(currentWord);
             ImageView imageViewMain = (ImageView) ActivityHelper.
-                    fetchAllChildrens(mainLayout, AppCompatImageView.class).get(0);
+                    fetchAllChildren(mainLayout, AppCompatImageView.class).get(0);
             TextView textViewMain = (TextView) ActivityHelper.
-                    fetchAllChildrens(mainLayout, AutoResizeTextView.class).get(0);
-            ActivityHelper.putDataView(imageViewMain, spellingWord, true, false);
-            ActivityHelper.putDataView(textViewMain, spellingWord, false, false);
+                    fetchAllChildren(mainLayout, AutoResizeTextView.class).get(0);
+//            ActivityHelper.putDataView(imageViewMain, spellingWord, true, false);
+//            ActivityHelper.putDataView(textViewMain, spellingWord, false, false);
             String mainId = ResourceUtil.getResourceEntryName(this, mainLayout.getId());
             updateCurrentData(mainId, spellingWord);
         }
@@ -120,7 +120,7 @@ public class SpellingDetailScreen extends AppCompatActivity {
         if (!StringExtension.isNullOrEmpty(currentWord) && !Util.isNull(similarLayouts) &&
                 !Util.isNull(spellingWordMap)) {
             List<String> similarWordName = dataManager.
-                    getSimilarSpelling(currentWord, similarLayouts.size());
+                    getSimilarSpellings(currentWord, similarLayouts.size());
             List<String> similarLayoutIds = new ArrayList<>(similarLayouts.keySet());
             String wordName;
             SpellingWord word;
@@ -133,13 +133,13 @@ public class SpellingDetailScreen extends AppCompatActivity {
                 linearLayout = similarLayouts.get(similarId);
 
                 imageView = (ImageView) ActivityHelper.
-                        fetchAllChildrens(linearLayout, AppCompatImageView.class).get(0);
+                        fetchAllChildren(linearLayout, AppCompatImageView.class).get(0);
                 textView = (TextView) ActivityHelper.
-                        fetchAllChildrens(linearLayout, AutoResizeTextView.class).get(0);
+                        fetchAllChildren(linearLayout, AutoResizeTextView.class).get(0);
                 wordName = similarWordName.get(index);
                 word = spellingWordMap.get(wordName);
-                ActivityHelper.putDataView(imageView, word, true, true);
-                ActivityHelper.putDataView(textView, word, false, false);
+//                ActivityHelper.putDataView(imageView, word, true, true);
+//                ActivityHelper.putDataView(textView, word, false, false);
                 updateCurrentData(similarId, word);
             }
         }
@@ -189,6 +189,8 @@ public class SpellingDetailScreen extends AppCompatActivity {
     private void playSound(View v) {
         String layoutId = ResourceUtil.getResourceEntryName(v.getContext(), v.getId());
         SpellingWord word = currentSimilarWords.get(layoutId);
-        MediaPlayerUtil.playSound(word.getMediaPlayer());
+        int soundId = ResourceUtil.getSoundResource(this, word.getSound());
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, soundId);
+        mediaPlayer.start();
     }
 }

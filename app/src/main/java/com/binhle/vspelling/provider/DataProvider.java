@@ -3,10 +3,11 @@ package com.binhle.vspelling.provider;
 import android.app.Activity;
 
 import com.binhle.vspelling.common.Service.SpellingService;
+import com.binhle.vspelling.model.Letter;
 import com.binhle.vspelling.model.SpellingWord;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,7 +32,8 @@ public class DataProvider implements DataManager {
     }
 
     // The spelling-word map
-    private Map<String, SpellingWord> spellingWordMaps = new HashMap<String, SpellingWord>();
+    private Map<String, SpellingWord> spellingWordMaps = new LinkedHashMap<>();
+    private Map<String, Letter> letters = new LinkedHashMap<>();
 
     /**
      * Gets spelling-words
@@ -44,7 +46,26 @@ public class DataProvider implements DataManager {
     }
 
     @Override
-    public List<String> getSimilarSpelling(String wordName, int numberOfSimilarWord) {
+    public Map<String, Letter> getAlphaBetaLetters() {
+        return letters;
+    }
+
+    @Override
+    public Map<String, Letter> fetchLettersByNumber(int pageIndex, int numberOfLetters) {
+        clearLetters();
+        this.letters= this.spellingService.selectLetters(pageIndex, numberOfLetters);
+        return letters;
+    }
+
+    @Override
+    public Map<String, SpellingWord> fetchWordsByIndex(int pageIndex) {
+        clearSpellingWords();
+        this.spellingWordMaps = this.spellingService.selectSpellingWordsByIndex(pageIndex);
+        return spellingWordMaps;
+    }
+
+    @Override
+    public List<String> getSimilarSpellings(String wordName, int numberOfSimilarWord) {
         List<String> spellingWords = new ArrayList<>();
         if (spellingWordMaps != null && !spellingWordMaps.isEmpty()) {
             // Get index of current word
@@ -88,15 +109,9 @@ public class DataProvider implements DataManager {
     }
 
     @Override
-    public Map<String, SpellingWord> fetchWordsByIndex(int pageIndex) {
-        clearSpellingWords();
-        this.spellingWordMaps = this.spellingService.selectSpellingWordsByIndex(pageIndex);
-        return spellingWordMaps;
-    }
-
-    @Override
     public void clear() {
         clearSpellingWords();
+        clearLetters();
     }
 
     /**
@@ -104,5 +119,12 @@ public class DataProvider implements DataManager {
      */
     private void clearSpellingWords() {
         spellingWordMaps.clear();
+    }
+
+    /**
+     * Clear letters
+     */
+    private void clearLetters() {
+        letters.clear();
     }
 }

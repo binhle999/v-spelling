@@ -1,5 +1,6 @@
 package com.binhle.vspelling.common;
 
+import android.app.Activity;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -18,6 +19,18 @@ public final class MediaPlayerUtil {
         player.start();
     }
 
+    /**
+     *
+     * @param activity
+     * @param resourceId
+     * @return
+     */
+    public static MediaPlayer buildMediaPlayer(Activity activity, int resourceId) {
+        if (activity != null && resourceId > 0) {
+            return MediaPlayer.create(activity, resourceId);
+        }
+        return null;
+    }
     public static void playSound(MediaPlayer player) {
         if (player != null) {
             player.start();

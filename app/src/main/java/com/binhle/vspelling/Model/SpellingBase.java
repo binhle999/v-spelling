@@ -8,7 +8,7 @@ import com.binhle.vspelling.common.ResourceUtil;
  * The SpellingBase class
  * Created by BinhLe on 7/15/2017.
  */
-public class SpellingBase extends MediaBase {
+public class SpellingBase {
     // The id
     private int id;
     // The name
@@ -116,25 +116,25 @@ public class SpellingBase extends MediaBase {
         this.sound = sound;
     }
 
-    /**
-     * Set image resource id
-     * @param activity
-     */
-    public void updateImageResourceId(Activity activity) {
-        int resId = ResourceUtil.getImageResource(activity, getImage());
-        if (resId > 0) {
-            super.setImageResourceId(resId);
-        }
-    }
-
-    /**
-     * Set media player
-     * @param activity
-     */
-    public void updateMediaPlayer(Activity activity) {
-        int resId = ResourceUtil.getSoundResource(activity, getSound());
-        if (resId > 0) {
-            super.setMediaPlayer(activity, resId);
-        }
-    }
+//    /**
+//     * Set image resource id
+//     * @param activity
+//     */
+//    public void updateImageResourceId(Activity activity) {
+//        int resId = ResourceUtil.getImageResource(activity, getImage());
+//        if (resId > 0) {
+//            super.setImageResourceId(resId);
+//        }
+//    }
+//
+//    /**
+//     * Set media player
+//     * @param activity
+//     */
+//    public void updateMediaPlayer(Activity activity) {
+//        int resId = ResourceUtil.getSoundResource(activity, getSound());
+//        if (resId > 0) {
+//            super.setMediaPlayer(activity, resId);
+//        }
+//    }
 }

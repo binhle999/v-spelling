@@ -52,73 +52,6 @@ public class SpellingService {
             database = Database.initDatabase(activity, DB_NAME);
         }
     }
-    /**
-     * Get information of specify letter by it's id.
-     * @param letterId
-     * @return
-     */
-    public Letter getLetterById(String letterId) {
-        Letter letter = null;
-        Cursor cursor = database.rawQuery("SELECT * FROM letter WHERE id='" + letterId.trim() + "'", null);
-        if (cursor.getCount() > 0) {
-            cursor.moveToPosition(0);
-            letter = new Letter(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
-        }
-        return letter;
-    }
-
-    /**
-     *  Get all letters.
-     * @return
-     */
-    public List<Letter> getAllLetters() {
-        List<Letter> resultMap = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT id, image_path FROM letter ORDER BY num", null);
-        String id;
-        String imagePath;
-        Letter letter;
-        // Get all information related to specify letter.
-        for (int i = 0; i < cursor.getCount(); i++) {
-            cursor.moveToPosition(i);
-            id = cursor.getString(0);
-            imagePath = cursor.getString(1);
-            letter = new Letter(id, imagePath);
-            resultMap.add(letter);
-        }
-        return resultMap;
-    }
-
-    /**
-     * Get all words by letter id.
-     * @param letterId
-     * @return
-     */
-    public List<Word> getWordsByLetterId(String letterId) {
-        List<Word> resultMap = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM word WHERE letter_id='" + letterId + "'", null);
-        String id;
-        String name;
-        String displayText;
-        String description;
-        String imagePath;
-        String soundPath;
-        Word word;
-        // Get all information related to specify letter.
-        for (int i = 0; i < cursor.getCount(); i++) {
-            cursor.moveToPosition(i);
-            id = cursor.getString(0);
-            name = cursor.getString(1);
-            displayText = cursor.getString(2);
-            description = cursor.getString(3);
-            imagePath = cursor.getString(4);
-            soundPath = cursor.getString(5);
-            letterId = cursor.getString(6);
-            word = new Word(id, name, displayText, description, imagePath, soundPath, letterId);
-            //Add gotten word into result list.
-            resultMap.add(word);
-        }
-        return resultMap;
-    }
 
     /**
      * Select spelling-words by page index
@@ -152,6 +85,42 @@ public class SpellingService {
             spellingWords.put(name, spellingWord);
         }
         return spellingWords;
+    }
+
+    /**
+     * Select letters
+     * @param pageIndex
+     * @param numberOfLetters
+     * @return
+     */
+    public Map<String, Letter> selectLetters(int pageIndex, int numberOfLetters) {
+        Map<String, Letter> letters = new LinkedHashMap<>();
+        // Calculate offset to query data
+        int offset = pageIndex - 1;
+        // Build query statement
+        StringBuilder mainQuery = new StringBuilder();
+        mainQuery.append("SELECT id,name,content,image,sound FROM letter");
+        mainQuery.append(" ORDER BY alphabeta");
+        mainQuery.append(" LIMIT ").append(numberOfLetters);
+        mainQuery.append(" OFFSET ").append(offset);
+
+        // Fill data
+        String name, content, image, sound;
+        int id;
+        Letter letter;
+        Cursor cursor = database.rawQuery(mainQuery.toString(), null);
+        // Loop to fill data into map
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToPosition(i);
+            id = cursor.getInt(0);
+            name= cursor.getString(1);
+            content = cursor.getString(2);
+            image = cursor.getString(3);
+            sound = cursor.getString(4);
+            letter = new Letter(id, name, content, image, sound);
+            letters.put(name, letter);
+        }
+        return letters;
     }
 
 }

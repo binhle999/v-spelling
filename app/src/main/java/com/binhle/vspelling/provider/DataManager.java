@@ -1,5 +1,6 @@
 package com.binhle.vspelling.provider;
 
+import com.binhle.vspelling.model.Letter;
 import com.binhle.vspelling.model.SpellingWord;
 
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.Map;
 public interface DataManager {
     Map<String, SpellingWord> fetchWordsByIndex(int pageIndex);
     Map<String, SpellingWord> getSpellingWordMap();
-    List<String> getSimilarSpelling(String wordName, int numberOfSimilarWord);
+    List<String> getSimilarSpellings(String wordName, int numberOfSimilarWord);
+    Map<String, Letter> fetchLettersByNumber(int pageIndex, int numberOfLetters);
+    Map<String, Letter> getAlphaBetaLetters();
     void clear();
 }

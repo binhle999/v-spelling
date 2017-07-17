@@ -71,7 +71,7 @@ public class SpellingScreen extends AppCompatActivity {
      */
     private void fetchWordViews() {
         LinearLayout itemList = (LinearLayout)findViewById(R.id.list_item);
-        listOfViews = ActivityHelper.fetchAllChildrens(itemList, AutoResizeTextView.class);
+        listOfViews = ActivityHelper.fetchAllChildren(itemList, AutoResizeTextView.class);
     }
 
     /**

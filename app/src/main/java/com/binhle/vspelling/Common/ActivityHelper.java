@@ -7,6 +7,7 @@ import android.support.v7.widget.TintContextWrapper;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,7 +27,7 @@ public final class ActivityHelper {
      * @param view
      * @return
      */
-    public static List<View> fetchAllChildrens(View view, Class<?> cls) {
+    public static List<View> fetchAllChildren(View view, Class<?> cls) {
         if (!(view instanceof ViewGroup)) {
             List<View> viewList1 = new ArrayList<>();
             if (cls == view.getClass()) {
@@ -38,9 +39,29 @@ public final class ActivityHelper {
         ViewGroup viewGroup = (ViewGroup) view;
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
             View childView = viewGroup.getChildAt(i);
-            viewList2.addAll(fetchAllChildrens(childView, cls));
+            viewList2.addAll(fetchAllChildren(childView, cls));
         }
         return viewList2;
+    }
+
+    /**
+     * Update image resource
+     * @param view
+     * @param imageId
+     */
+    public static void updateImageResource(ImageView view, String imageId) {
+        Activity activity = getActivityByView(view);
+        int imageResId = ResourceUtil.getImageResource(activity, imageId);
+        view.setImageResource(imageResId);
+    }
+
+    /**
+     * Update view's click event
+     * @param view
+     * @param clickListener
+     */
+    public static void updateViewClickEvent(View view, View.OnClickListener clickListener) {
+        view.setOnClickListener(clickListener);
     }
 
     /**
@@ -48,34 +69,16 @@ public final class ActivityHelper {
      *
      * @param view
      */
-    public static void putDataView(View view, SpellingBase spellingBase, boolean hasBackground,
-                                   boolean hasSound) {
-        Class<?> type = view.getClass();
-        if (AppCompatImageView.class.equals(type)) {
-            putImageViewData(view, spellingBase, hasBackground, hasSound);
-        } else if (AppCompatTextView.class.equals(type) || AutoResizeTextView.class.equals(type)) {
-            putTextViewData(view, spellingBase, hasBackground, hasSound);
-        }
-    }
-
-    /**
-     * @param viewGroup
-     * @param spellingBase
-     */
-    public static void putDataLayout(ViewGroup viewGroup, SpellingBase spellingBase) {
-        if (viewGroup instanceof LinearLayout) {
-            putLinearLayoutData((LinearLayout)viewGroup, spellingBase);
-        }
-    }
-
-    /**
-     * Put linear layout data
-     */
-    private static void putLinearLayoutData(LinearLayout linearLayout, SpellingBase spellingBase) {
-        Activity imageSelfActivity = getActivityByView(linearLayout);
-        spellingBase.setViewId(linearLayout.getId());
-        spellingBase.updateMediaPlayer(imageSelfActivity);
-    }
+//    public static void putDataView(View view, SpellingBase spellingBase, boolean hasBackground,
+//                                   boolean hasSound) {
+//        Class<?> type = view.getClass();
+//        if (AppCompatImageView.class.equals(type)) {
+//            putImageViewData(view, spellingBase, hasBackground, hasSound);
+//        }
+////        else if (AppCompatTextView.class.equals(type) || AutoResizeTextView.class.equals(type)) {
+////            putTextViewData(view, spellingBase, hasBackground, hasSound);
+////        }
+//    }
 
     /**
      * Put image view data
@@ -83,26 +86,24 @@ public final class ActivityHelper {
      * @param view
      * @param spellingBase
      */
-    private static void putImageViewData(View view, SpellingBase spellingBase, boolean hasImage,
-                                         boolean hasSound) {
-        AppCompatImageView imageView = (AppCompatImageView) view;
-        Activity imageSelfActivity = null;
-        try {
-            spellingBase.setViewId(imageView.getId());
-            if (hasImage) {
-                imageSelfActivity = getActivityByView(imageView);
-                spellingBase.updateImageResourceId(imageSelfActivity);
-                imageView.setImageResource(spellingBase.getImageResourceId());
-            }
-            if (hasSound) {
-                imageSelfActivity = imageSelfActivity == null ? getActivityByView(imageView) :
-                        imageSelfActivity;
-                spellingBase.updateMediaPlayer(imageSelfActivity);
-            }
-        } catch (Exception e) {
-            Log.e("Get Activity", e.getMessage());
-        }
-    }
+//    private static void putImageViewData(View view, SpellingBase spellingBase, boolean hasImage,
+//                                         boolean hasSound) {
+//        AppCompatImageView imageView = (AppCompatImageView) view;
+//        Activity imageSelfActivity = null;
+//        try {
+//            if (hasImage) {
+//                imageSelfActivity = getActivityByView(imageView);
+//                imageView.setImageResource(spellingBase.getImageResourceId());
+//            }
+//            if (hasSound) {
+//                imageSelfActivity = imageSelfActivity == null ? getActivityByView(imageView) :
+//                        imageSelfActivity;
+//                spellingBase.updateMediaPlayer(imageSelfActivity);
+//            }
+//        } catch (Exception e) {
+//            Log.e("Get Activity", e.getMessage());
+//        }
+//    }
 
     /**
      * Put textview data
@@ -112,33 +113,33 @@ public final class ActivityHelper {
      * @param hasBackground
      * @param hasSound
      */
-    private static void putTextViewData(View view, SpellingBase spellingBase, boolean
-            hasBackground, boolean hasSound) {
-        // Set text for the view
-        TextView textView = (TextView) view;
-        try {
-            spellingBase.setViewId(view.getId());
-            textView.setText(spellingBase.getContent());
-            Activity viewSelfActivity = null;
-
-            // Set background of the view if it has background
-            if (hasBackground) {
-                viewSelfActivity = viewSelfActivity != null ? viewSelfActivity :
-                        getActivityByView(textView);
-                spellingBase.updateImageResourceId(viewSelfActivity);
-                textView.setBackgroundResource(spellingBase.getImageResourceId());
-            }
-
-            // Set background of the view if it has sound
-            if (hasSound) {
-                viewSelfActivity = viewSelfActivity != null ? viewSelfActivity :
-                        getActivityByView(textView);
-                spellingBase.updateMediaPlayer(viewSelfActivity);
-            }
-        } catch (Exception e) {
-            Log.e("PutTextViewData", e.getMessage());
-        }
-    }
+//    private static void putTextViewData(View view, SpellingBase spellingBase, boolean
+//            hasBackground, boolean hasSound) {
+//        // Set text for the view
+//        TextView textView = (TextView) view;
+//        try {
+//            spellingBase.setViewId(view.getId());
+//            textView.setText(spellingBase.getContent());
+//            Activity viewSelfActivity = null;
+//
+//            // Set background of the view if it has background
+//            if (hasBackground) {
+//                viewSelfActivity = viewSelfActivity != null ? viewSelfActivity :
+//                        getActivityByView(textView);
+//                spellingBase.updateImageResourceId(viewSelfActivity);
+//                textView.setBackgroundResource(spellingBase.getImageResourceId());
+//            }
+//
+//            // Set background of the view if it has sound
+//            if (hasSound) {
+//                viewSelfActivity = viewSelfActivity != null ? viewSelfActivity :
+//                        getActivityByView(textView);
+//                spellingBase.updateMediaPlayer(viewSelfActivity);
+//            }
+//        } catch (Exception e) {
+//            Log.e("PutTextViewData", e.getMessage());
+//        }
+//    }
 
     /**
      * Get activity by view
