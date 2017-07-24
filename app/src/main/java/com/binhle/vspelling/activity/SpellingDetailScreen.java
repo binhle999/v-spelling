@@ -50,7 +50,7 @@ public class SpellingDetailScreen extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        dataManager.clear();
+//        dataManager.clear();
     }
 
     /**

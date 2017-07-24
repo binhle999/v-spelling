@@ -99,8 +99,9 @@ public class SpellingService {
         int offset = pageIndex - 1;
         // Build query statement
         StringBuilder mainQuery = new StringBuilder();
-        mainQuery.append("SELECT id,name,content,image,sound FROM letter");
-        mainQuery.append(" ORDER BY alphabeta");
+        mainQuery.append("SELECT id,name,content,image,sound FROM 'spelling-word'");
+        mainQuery.append(" WHERE type = '1'");
+//        mainQuery.append(" ORDER BY");
         mainQuery.append(" LIMIT ").append(numberOfLetters);
         mainQuery.append(" OFFSET ").append(offset);
 
@@ -136,7 +137,7 @@ public class SpellingService {
         int offset = pageIndex - 1;
         // Build query statement
         StringBuilder mainQuery = new StringBuilder();
-        mainQuery.append("SELECT id,name,content,image,sound FROM word");
+        mainQuery.append("SELECT id,name,content,image,sound FROM 'related-word'");
         mainQuery.append(" WHERE letter='").append(letterName).append("'");
         mainQuery.append(" LIMIT ").append(numberOfWords);
         mainQuery.append(" OFFSET ").append(offset);

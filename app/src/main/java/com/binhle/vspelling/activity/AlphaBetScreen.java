@@ -15,6 +15,7 @@ import com.binhle.vspelling.model.Letter;
 import com.binhle.vspelling.model.SpellingBase;
 import com.binhle.vspelling.provider.DataProvider;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class AlphaBetScreen extends AppCompatActivity {
     private ImageView homeView;
     private List<View> viewList;
     private Map<String, SpellingBase> letterMap;
-    private Map<Integer, String> letterViews;
+    private Map<Integer, String> letterViews = new LinkedHashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class AlphaBetScreen extends AppCompatActivity {
         dataProvider.setupSpellingService(this);
         letterMap = dataProvider.fetchLettersByNumber(1, Constants.DEFAULT_NUMBER_OF_LETTERS);
         Object[] letters = letterMap.values().toArray();
-        int numberOfViewToShow = Math.min(letters.length, letterViews.size());
+        int numberOfViewToShow = Math.min(letters.length, viewList.size());
         Letter letter;
         ImageView imageView;
         for (int index = 0; index < numberOfViewToShow; index++) {

@@ -124,7 +124,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/layout_word_hint"
+            android:id="@+id/layout_related_words"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1">
 
