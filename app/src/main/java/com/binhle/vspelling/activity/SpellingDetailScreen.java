@@ -14,7 +14,6 @@ import com.binhle.vspelling.common.util.ActivityHelper;
 import com.binhle.vspelling.common.customize.AutoResizeTextView;
 import com.binhle.vspelling.common.util.ResourceUtil;
 import com.binhle.vspelling.common.util.Util;
-import com.binhle.vspelling.common.util.StringUtil;
 import com.binhle.vspelling.model.SpellingBase;
 import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.provider.DataManager;
@@ -28,10 +27,13 @@ import java.util.Map;
 public class SpellingDetailScreen extends AppCompatActivity {
 
     private Map<String, LinearLayout> similarLayouts;
+    private ImageView homeView;
+    private ImageView previousView;
     private LinearLayout mainLayout;
     private Map<String, SpellingWord> currentSimilarWords;
     private DataManager dataManager = DataProvider.getInstance();
     private String currentWord;
+    private MediaPlayer mediaPlayer;
 
 
     @Override
@@ -50,7 +52,7 @@ public class SpellingDetailScreen extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        dataManager.clear();
+        //        dataManager.clear();
     }
 
     /**
@@ -69,6 +71,8 @@ public class SpellingDetailScreen extends AppCompatActivity {
      */
     private void fetchViews() {
         currentSimilarWords = new LinkedHashMap<>();
+        homeView = (ImageView) findViewById(R.id.img_home);
+        previousView = (ImageView) findViewById(R.id.img_back);
         // fetch main view
         mainLayout = (LinearLayout) findViewById(R.id.main);
         String layoutId = ResourceUtil.getResourceEntryName(this, mainLayout.getId());
@@ -100,7 +104,7 @@ public class SpellingDetailScreen extends AppCompatActivity {
      */
     private void putMainViewData() {
         Map<String, SpellingBase> spellingWordMap = dataManager.getSpellingWordMap();
-        if (!StringUtil.isNullOrEmpty(currentWord) && !Util.isNull(mainLayout) &&
+        if (!Util.isNullOrEmpty(currentWord) && !Util.isNull(mainLayout) &&
                 !Util.isNull(spellingWordMap)) {
             SpellingWord word = (SpellingWord) spellingWordMap.get(currentWord);
             ImageView imageView = (ImageView) ActivityHelper.
@@ -119,7 +123,7 @@ public class SpellingDetailScreen extends AppCompatActivity {
      */
     private void putSimilarData() {
         Map<String, SpellingBase> spellingWordMap = dataManager.getSpellingWordMap();
-        if (!StringUtil.isNullOrEmpty(currentWord) && !Util.isNull(similarLayouts) &&
+        if (!Util.isNullOrEmpty(currentWord) && !Util.isNull(similarLayouts) &&
                 !Util.isNull(spellingWordMap)) {
             List<String> similarWordName = dataManager.
                     getSimilarSpellings(currentWord, similarLayouts.size());
@@ -165,6 +169,8 @@ public class SpellingDetailScreen extends AppCompatActivity {
         for (LinearLayout linearLayout : similarLayouts.values()) {
             linearLayout.setOnClickListener(LinearLayoutOnClickListener);
         }
+        homeView.setOnClickListener(OtherOnClickListener);
+        previousView.setOnClickListener(OtherOnClickListener);
     }
 
     /**
@@ -184,6 +190,21 @@ public class SpellingDetailScreen extends AppCompatActivity {
     };
 
     /**
+     * The other on click listener
+     */
+    private final View.OnClickListener OtherOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int viewId = v.getId();
+            if (viewId == homeView.getId()) {
+                ActivityHelper.backHome(SpellingDetailScreen.this);
+            } else if (viewId == previousView.getId()) {
+                onBackPressed();
+            }
+        }
+    };
+
+    /**
      * Play sound
      *
      * @param v
@@ -192,7 +213,15 @@ public class SpellingDetailScreen extends AppCompatActivity {
         String layoutId = ResourceUtil.getResourceEntryName(v.getContext(), v.getId());
         SpellingWord word = currentSimilarWords.get(layoutId);
         int soundId = ResourceUtil.getSoundResource(this, word.getSound());
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, soundId);
+        mediaPlayer = MediaPlayer.create(this, soundId);
         mediaPlayer.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+        super.onBackPressed();
     }
 }

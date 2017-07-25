@@ -12,5 +12,18 @@ public final class Util {
     public static boolean isNull(Object object) {
         return object == null ? true : false;
     }
+
+    /**
+     * Check string is null or empty.
+     * @param value
+     * @return
+     */
+    public static boolean isNullOrEmpty(String value) {
+        if (value == null || value.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
 }
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class SpellingScreen extends AppCompatActivity {
     private Map<String, SpellingBase> wordsMap;
     private List<View> listOfViews;
     private Map<String, String> wordViews;
+    private ImageView homeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,8 @@ public class SpellingScreen extends AppCompatActivity {
     private void fetchWordViews() {
         LinearLayout itemList = (LinearLayout)findViewById(R.id.list_item);
         listOfViews = ActivityHelper.fetchAllChildren(itemList, AutoResizeTextView.class);
+        homeView = (ImageView) findViewById(R.id.img_home);
+        homeView.setOnClickListener(ImageViewOnClickListener);
     }
 
     /**
@@ -108,6 +112,18 @@ public class SpellingScreen extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtra("wordName", wordName);
             startActivity(intent);
+        }
+    };
+    /**
+     * The ImageView Listener
+     */
+    private final View.OnClickListener ImageViewOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int viewId = v.getId();
+            if (viewId == homeView.getId()) {
+                ActivityHelper.backHome(SpellingScreen.this);
+            }
         }
     };
 }

@@ -9,9 +9,11 @@ import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by BinhLe on 7/15/2017.
@@ -35,6 +37,7 @@ public class DataProvider implements DataManager {
 
     // The spelling-word map
     private Map<String, SpellingBase> spellingWordMaps = new LinkedHashMap<>();
+    // The letters
     private Map<String, SpellingBase> letters = new LinkedHashMap<>();
 
     /**
@@ -52,11 +55,51 @@ public class DataProvider implements DataManager {
         return letters;
     }
 
+    /**
+     * get index of alpha beta
+     *
+     * @param name
+     * @return
+     */
+    @Override
+    public int getIndexOfAlphaBeta(String name) {
+        List<SpellingBase> letterList = new ArrayList<>(letters.values());
+        SpellingBase spellingBase = letters.get(name);
+        return letterList.indexOf(spellingBase);
+    }
+
+    /**
+     * Get alpha beta by index
+     *
+     * @param index
+     * @return
+     */
+    @Override
+    public SpellingBase getAlphaBetaByIndex(int index) {
+        List<SpellingBase> letterList = new ArrayList<>(letters.values());
+        index = index >= letterList.size() ? index - letterList.size() : index;
+        index = index < 0 ? index + letterList.size() : index;
+        return letterList.get(index);
+    }
+
+    /**
+     * Get similar letters
+     * @param letterName
+     * @param numberOfLetters
+     * @return
+     */
     @Override
     public List<String> getSimilarLetters(String letterName, int numberOfLetters) {
         return getSimilarSpellings(letters, letterName, numberOfLetters);
     }
 
+    /**
+     * Fetch related words
+     * @param letterName
+     * @param pageIndex
+     * @param numberOfWords
+     * @return
+     */
     @Override
     public List<SpellingBase> fetchRelatedWords(String letterName, int pageIndex, int
             numberOfWords) {
@@ -65,6 +108,12 @@ public class DataProvider implements DataManager {
         return relatedWords;
     }
 
+    /**
+     * Fetch Letters By Number
+     * @param pageIndex
+     * @param numberOfLetters
+     * @return
+     */
     @Override
     public Map<String, SpellingBase> fetchLettersByNumber(int pageIndex, int numberOfLetters) {
         clearLetters();
@@ -72,6 +121,11 @@ public class DataProvider implements DataManager {
         return letters;
     }
 
+    /**
+     * Fetch word by index
+     * @param pageIndex
+     * @return
+     */
     @Override
     public Map<String, SpellingBase> fetchWordsByIndex(int pageIndex) {
         clearSpellingWords();
@@ -79,38 +133,50 @@ public class DataProvider implements DataManager {
         return spellingWordMaps;
     }
 
+    /**
+     * Get similar spelling
+     * @param wordName
+     * @param numberOfSimilarWord
+     * @return
+     */
     @Override
     public List<String> getSimilarSpellings(String wordName, int numberOfSimilarWord) {
         return getSimilarSpellings(spellingWordMaps, wordName, numberOfSimilarWord);
     }
 
+    /**
+     * Get similar spelling
+     * @param spellingWordMaps
+     * @param key
+     * @param numberOfSimilar
+     * @return
+     */
     private List<String> getSimilarSpellings(Map<String, SpellingBase> spellingWordMaps, String
             key, int numberOfSimilar) {
         List<String> spellingWords = new ArrayList<>();
         if (spellingWordMaps != null && !spellingWordMaps.isEmpty()) {
-            // Get index of current word
+            // Get currentIndex of current word
             List<String> spellingWordList = new ArrayList<>(spellingWordMaps.keySet());
-            int index = spellingWordList.indexOf(key);
+            int currentIndex = spellingWordList.indexOf(key);
             // Get the start offset and the end offset to get similar words.
-            int lastIndex = spellingWordList.size() - 1;
-            int realNumberOfSimilarWord = numberOfSimilar - 1;
             int startOffset;
-            int endOffset;
+            int sizeOfExpectedList;
+            int sizeOfDataList = spellingWordList.size();
+            List<Integer> listOfIndex = new ArrayList<>();
             if (spellingWordList.size() <= numberOfSimilar) {
                 startOffset = 0;
-                endOffset = lastIndex;
+                sizeOfExpectedList = sizeOfDataList - 1;
             } else {
-                startOffset = index - realNumberOfSimilarWord / 2;
-                startOffset = startOffset < 0 ? 0 : startOffset;
-
-                endOffset = startOffset + realNumberOfSimilarWord;
-                endOffset = endOffset >= lastIndex ? lastIndex : endOffset;
-                startOffset = endOffset == lastIndex ? lastIndex - realNumberOfSimilarWord :
-                        startOffset;
+                startOffset = currentIndex - numberOfSimilar / 2;
+                sizeOfExpectedList = numberOfSimilar;
             }
-
-            for (int i = startOffset; i <= endOffset; i++) {
-                spellingWords.add(spellingWordList.get(i));
+            // Get expected data
+            int index;
+            for (int i = 0; i < sizeOfExpectedList; i++) {
+                index = startOffset + i;
+                index = index < 0 ? index + sizeOfDataList : index;
+                index = index >= sizeOfDataList ? index - sizeOfDataList : index;
+                spellingWords.add(spellingWordList.get(index));
             }
         }
         return spellingWords;

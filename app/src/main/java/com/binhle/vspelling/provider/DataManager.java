@@ -23,6 +23,10 @@ public interface DataManager {
 
     Map<String, SpellingBase> getAlphaBetaLetters();
 
+    int getIndexOfAlphaBeta(String name);
+
+    SpellingBase getAlphaBetaByIndex(int index);
+
     List<String> getSimilarLetters(String letterName, int numberOfLetters);
 
     List<SpellingBase> fetchRelatedWords(String letterName, int pageIndex, int numberOfWords);

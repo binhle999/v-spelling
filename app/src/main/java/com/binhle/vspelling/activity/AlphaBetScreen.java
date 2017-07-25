@@ -40,6 +40,7 @@ public class AlphaBetScreen extends AppCompatActivity {
      */
     private void fetchLetterViews() {
         homeView = (ImageView)findViewById(R.id.alphaBeta_home);
+        ActivityHelper.updateViewClickEvent(homeView, ImageOnClickListener);
         View alphaBetaView = findViewById(R.id.alphaBeta_view);
         viewList = ActivityHelper.fetchAllChildren(alphaBetaView, AppCompatImageView.class);
         // Remove first object, it is home image.
@@ -73,7 +74,7 @@ public class AlphaBetScreen extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (v == homeView) {
-
+                ActivityHelper.backHome(AlphaBetScreen.this);
             } else {
                 goToDetailScreen(v);
             }
