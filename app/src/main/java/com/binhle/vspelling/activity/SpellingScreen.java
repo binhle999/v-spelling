@@ -37,6 +37,7 @@ public class SpellingScreen extends AppCompatActivity {
         fillDataViews();
     }
 
+
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -91,7 +92,7 @@ public class SpellingScreen extends AppCompatActivity {
         for (int index = 0; index < listOfViews.size(); index++) {
             AutoResizeTextView view = (AutoResizeTextView)listOfViews.get(index);
             SpellingWord word = (SpellingWord)words[index];
-            view.setText(word.getContent(), TextView.BufferType.SPANNABLE);
+            view.setText(word.getContent() + "");
             String viewId = ResourceUtil.getResourceEntryName(getBaseContext(), view.getId());
             wordViews.put(viewId, word.getName());
             view.setOnClickListener(TextViewOnClickListener);

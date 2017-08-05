@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,12 +44,15 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
     private DataProvider dataProvider = DataProvider.getInstance();
     private List<MediaPlayer> players = new LinkedList();
     private MediaPlayer mediaPlayer1, mediaPlayer2, mediaPlayer3, mediaPlayer4;
+    private Animation shake;
+    private Animation flip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alpha_beta_detail_screen);
         String letterName = getIntent().getStringExtra("letterName");
+        fetchViews();
         execute(letterName);
         wasStarted = true;
     }
@@ -59,7 +64,6 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
      */
     private void execute(String letterName) {
         mainLetter = letterName;
-        fetchViews();
         fillDataViews();
         playSoundFirstTime();
     }
@@ -94,6 +98,8 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
                     relatedWordViews.add(view);
                 }
             }
+            shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+            flip = AnimationUtils.loadAnimation(this, R.anim.flip);
         }
     }
 
@@ -184,6 +190,7 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
     private final View.OnClickListener ImageOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            stopSound();
             if (v instanceof ImageView) {
                 ImageView imageView = (ImageView) v;
                 if (imageView.getId() == mainView.getId()) {
@@ -210,8 +217,8 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             int viewId = v.getId();
+            stopSound();
             if (viewId == homeView.getId()) {
-                stopSound();
                 ActivityHelper.backHome(AlphaBetaDetailScreen.this);
             } else if (viewId == alphaBetaView.getId()) {
                 onBackPressed();
@@ -232,12 +239,18 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
     private void playSound(View v) {
         int viewId = v.getId();
         SpellingBase spellingBase = dataViews.get(viewId);
-        int soundId = ResourceUtil.getSoundResource(this, spellingBase.
-                getSound().replace("sound_", ""));
+        ImageView imageView;
+        if (viewId == mainView.getId()) {
+            imageView = mainView;
+        } else {
+            imageView = (ImageView) ((LinearLayout) findViewById(viewId)).getChildAt(0);
+        }
+        int soundId = ResourceUtil.getSoundResource(this, spellingBase.getSound());
         if (soundId > 0) {
             mediaPlayer = MediaPlayer.create(this, soundId);
             mediaPlayer.start();
         }
+        imageView.startAnimation(flip);
     }
 
     /**
@@ -263,36 +276,57 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer2.start();
+                stopAnimation();
+                relatedWordViews.get(0).startAnimation(flip);
             }
         });
         mediaPlayer2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer3.start();
+                stopAnimation();
+                relatedWordViews.get(1).startAnimation(flip);
             }
         });
         mediaPlayer3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer4.start();
+                stopAnimation();
+                relatedWordViews.get(2).startAnimation(flip);
             }
         });
         stopSound();
         mediaPlayer1.start();
+        mainView.startAnimation(shake);
+
     }
 
-    public void stopSound() {
-//        loop = false;
-        if (mediaPlayer1.isPlaying()){
+    /**
+     * Stop all animations
+     */
+    private void stopAnimation() {
+        mainView.clearAnimation();
+        for (View view : relatedWordViews) {
+            view.clearAnimation();
+        }
+    }
+
+    /**
+     * Stop all sounds
+     */
+    private void stopSound() {
+        //        loop = false;
+        if (mediaPlayer1.isPlaying()) {
             mediaPlayer1.pause();
         }
-        if (mediaPlayer2.isPlaying()){
+        if (mediaPlayer2.isPlaying()) {
             mediaPlayer2.pause();
         }
-        if (mediaPlayer3.isPlaying()){
+        if (mediaPlayer3.isPlaying()) {
             mediaPlayer3.pause();
         }
-        if (mediaPlayer4.isPlaying()){
+        if (mediaPlayer4.isPlaying()) {
             mediaPlayer4.pause();
         }
     }
@@ -304,11 +338,9 @@ public class AlphaBetaDetailScreen extends AppCompatActivity {
      */
     private MediaPlayer getMediaPlayer(SpellingBase spellingBase) {
         MediaPlayer mediaPlayer = null;
-        int soundId = ResourceUtil.getSoundResource(this, spellingBase.
-                getSound().replace("sound_", ""));
+        int soundId = ResourceUtil.getSoundResource(this, spellingBase.getSound());
         if (soundId > 0) {
             mediaPlayer = MediaPlayer.create(this, soundId);
-            mediaPlayer.start();
         }
         return mediaPlayer;
     }

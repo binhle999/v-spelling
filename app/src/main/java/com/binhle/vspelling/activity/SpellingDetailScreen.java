@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,12 +37,13 @@ public class SpellingDetailScreen extends AppCompatActivity {
     private String currentWord;
     private MediaPlayer mediaPlayer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spelling_detail_screen);
         String wordName = getIntent().getStringExtra("wordName");
+        fetchViews();
+        registerEvents();
         execute(wordName);
     }
 
@@ -52,7 +55,6 @@ public class SpellingDetailScreen extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //        dataManager.clear();
     }
 
     /**
@@ -60,8 +62,6 @@ public class SpellingDetailScreen extends AppCompatActivity {
      */
     private void execute(String wordName) {
         this.currentWord = wordName;
-        fetchViews();
-        registerEvents();
         putViewsData();
         playSound(mainLayout);
     }

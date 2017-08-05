@@ -139,10 +139,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/img_result_msg"
-                android:src="@drawable/dungroi"
                 android:layout_weight="1" />
 
-            <TextView
+            <com.binhle.vspelling.common.customize.AutoResizeTextView
                 android:layout_width="85dp"
                 android:layout_height="match_parent"
                 android:ellipsize="none"
