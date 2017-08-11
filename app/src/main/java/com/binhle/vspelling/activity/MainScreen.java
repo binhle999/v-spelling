@@ -12,7 +12,6 @@ import android.widget.ImageView;
 
 import com.binhle.vspelling.R;
 import com.binhle.vspelling.common.constant.Constants;
-import com.binhle.vspelling.common.constant.MediaPlayerConstants;
 import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;
@@ -52,8 +51,6 @@ public class MainScreen extends AppCompatActivity {
     private void initMediaPlayer() {
         mediaPlayer = MediaPlayer.create(MainScreen.this, R.raw.bkgrsong);
         mediaPlayer.setLooping(true);
-        mediaPlayer.setVolume(MediaPlayerConstants.MAX_LEFT_VOLUME,
-                MediaPlayerConstants.MAX_RIGHT_VOLUME);
         mediaPlayer.start();
     }
     // handle click event of sound image

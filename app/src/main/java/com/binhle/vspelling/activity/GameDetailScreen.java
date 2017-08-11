@@ -1,5 +1,6 @@
 package com.binhle.vspelling.activity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +34,9 @@ public class GameDetailScreen extends AppCompatActivity {
     private List<SpellingBase> letters;
     private int resultIndex;
     private int selectionCount = 0;
-    private static final int MAX_SELECTION = 2;
+    private int repeatCount = 0;
+    private static final int MAX_REPEAT = 2;
+    private static final int MAX_SELECTION = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +75,7 @@ public class GameDetailScreen extends AppCompatActivity {
     private void initialize() {
         truePlayer = MediaPlayer.create(this, R.raw.dung_roi_gioi_qua);
         falsePlayer = MediaPlayer.create(this, R.raw.oi_sai_roi);
-        selectionPlayer = MediaPlayer.create(this, R.raw.oi_sai_roi);
+//        selectionPlayer = MediaPlayer.create(this, R.raw.oi_sai_roi);
         truePlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -80,12 +83,15 @@ public class GameDetailScreen extends AppCompatActivity {
                 result.setImageBitmap(null);
                 next.setVisibility(View.VISIBLE);
                 repeat.setVisibility(View.VISIBLE);
+                setClickable(true);
             }
         });
         falsePlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 result.setImageBitmap(null);
+                setClickable(true);
+                toGameOver();
             }
         });
     }
@@ -108,6 +114,7 @@ public class GameDetailScreen extends AppCompatActivity {
      */
     private void updateViewData() {
         selectionCount = 0;
+        repeatCount = 0;
         List<Integer> randomLetterIndex = generateLetterIndex(letters.size(), letterViewsIndex
                 .size());
         ImageView view;
@@ -195,13 +202,11 @@ public class GameDetailScreen extends AppCompatActivity {
         public void onClick(View v) {
             ImageView imageView = (ImageView) v;
             stopSound();
+            setClickable(false);
             if (letterViewsIndex.indexOf(imageView.getId()) == resultIndex) {
                 correct();
             } else {
-                next.setVisibility(View.INVISIBLE);
-                if (selectionCount >= MAX_SELECTION) {
-                    repeat.setVisibility(View.INVISIBLE);
-                }
+                selectionCount++;
                 incorrect();
             }
         }
@@ -219,8 +224,8 @@ public class GameDetailScreen extends AppCompatActivity {
                 ActivityHelper.backHome(getBaseContext());
             } else if (viewId == repeat.getId()) {
                 stopSound();
-                selectionCount++;
-                if (selectionCount >= MAX_SELECTION) {
+                repeatCount++;
+                if (repeatCount >= MAX_REPEAT) {
                     repeat.setVisibility(View.INVISIBLE);
                     next.setVisibility(View.INVISIBLE);
                 }
@@ -228,5 +233,23 @@ public class GameDetailScreen extends AppCompatActivity {
             }
         }
     };
+
+    /**
+     * Go to Game over
+     */
+    private void toGameOver() {
+        if (selectionCount >= MAX_SELECTION) {
+            Intent intent = new Intent(this, GameOverScreen.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            this.startActivity(intent);
+        }
+    }
+
+    private void setClickable(boolean state) {
+        for (int index = 0; index < letterViewsIndex.size();index++) {
+            ImageView imageView = (ImageView) findViewById(letterViewsIndex.get(index));
+            imageView.setClickable(state);
+        }
+    }
 
 }

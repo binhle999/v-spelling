@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
-import com.binhle.vspelling.common.constant.CommonType;
-import com.binhle.vspelling.common.constant.ErrorConstants;
+import com.binhle.vspelling.common.constant.Constants;
 
 /**
  * Created by BinhLe on 4/16/2017.
@@ -24,8 +23,7 @@ public class ResourceUtil {
             name = context.getResources().getResourceEntryName(resId);
             Log.i("Resource Name", name);
         } catch (Exception e) {
-            Log.e("GetResourceName Error", String.format(ErrorConstants.RESOURCE_NAME_NOT_FOUND,
-                                                         resId));
+            Log.e("GetResourceName Error", String.format(Constants.RESOURCE_NAME_NOT_FOUND, resId));
         }
         return name;
     }
@@ -58,9 +56,7 @@ public class ResourceUtil {
      * @return
      */
     public static int getSoundResource(Activity activity, String soundName) {
-        return getResourceId(activity.getBaseContext(), String.valueOf(CommonType.ResourceType
-                                                                               .RAW).toLowerCase
-                (), soundName);
+        return getResourceId(activity.getBaseContext(), "raw", soundName);
     }
 
     /**
@@ -71,9 +67,7 @@ public class ResourceUtil {
      * @return
      */
     public static int getImageResource(Activity activity, String imageName) {
-        return getResourceId(activity.getBaseContext(), String.valueOf(CommonType.ResourceType
-                                                                               .DRAWABLE)
-                .toLowerCase(), imageName);
+        return getResourceId(activity.getBaseContext(), "drawable", imageName);
     }
 }
 

@@ -58,9 +58,9 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="#ff6600"
             android:textSize="80sp"
-            android:text="Bà"/>
+            android:text="Bà"
+            style="@style/DetailSpelling"/>
     </LinearLayout>
     <!--similar layout-->
     <LinearLayout
@@ -86,8 +86,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="#ff6600"
-                android:id="@+id/similar1_tv"/>
+                android:id="@+id/similar1_tv"
+                style="@style/DetailSpelling"/>
         </LinearLayout>
         <!--similar2 layout-->
         <LinearLayout
@@ -106,8 +106,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="#ff6600"
-                android:id="@+id/similar2_tv"/>
+                android:id="@+id/similar2_tv"
+                style="@style/DetailSpelling"/>
         </LinearLayout>
         <!--similar3 layout-->
         <LinearLayout
@@ -126,8 +126,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="#ff6600"
-                android:id="@+id/similar3_tv"/>
+                android:id="@+id/similar3_tv"
+                style="@style/DetailSpelling"/>
         </LinearLayout>
         <!--similar4 layout-->
         <LinearLayout
@@ -146,8 +146,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="#ff6600"
-                android:id="@+id/similar4_tv"/>
+                android:id="@+id/similar4_tv"
+                style="@style/DetailSpelling"/>
         </LinearLayout>
         <!--similar5 layout-->
         <LinearLayout
@@ -166,8 +166,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="#ff6600"
-                android:id="@+id/similar5_tv"/>
+                android:id="@+id/similar5_tv"
+                style="@style/DetailSpelling"/>
         </LinearLayout>
     </LinearLayout>
 

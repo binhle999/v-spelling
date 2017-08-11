@@ -213,6 +213,7 @@ public class SpellingDetailScreen extends AppCompatActivity {
         String layoutId = ResourceUtil.getResourceEntryName(v.getContext(), v.getId());
         SpellingWord word = currentSimilarWords.get(layoutId);
         int soundId = ResourceUtil.getSoundResource(this, word.getSound());
+        stopSound();
         mediaPlayer = MediaPlayer.create(this, soundId);
         mediaPlayer.start();
     }
@@ -223,5 +224,11 @@ public class SpellingDetailScreen extends AppCompatActivity {
             mediaPlayer.pause();
         }
         super.onBackPressed();
+    }
+
+    private void stopSound() {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();;
+        }
     }
 }
