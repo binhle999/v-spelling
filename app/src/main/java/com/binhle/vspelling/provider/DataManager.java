@@ -1,9 +1,6 @@
 package com.binhle.vspelling.provider;
 
-import com.binhle.vspelling.model.Letter;
 import com.binhle.vspelling.model.SpellingBase;
-import com.binhle.vspelling.model.SpellingWord;
-import com.binhle.vspelling.model.Word;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +10,7 @@ import java.util.Map;
  * Created by BinhLe on 7/15/2017.
  */
 public interface DataManager {
-    Map<String, SpellingBase> fetchWordsByIndex(int pageIndex);
+    Map<String, SpellingBase> fetchSpellingByIndex(int pageIndex);
 
     Map<String, SpellingBase> getSpellingWordMap();
 
@@ -30,6 +27,8 @@ public interface DataManager {
     List<String> getSimilarLetters(String letterName, int numberOfLetters);
 
     List<SpellingBase> fetchRelatedWords(String letterName, int pageIndex, int numberOfWords);
+
+    List<SpellingBase> fetchWordsBySpelling(String spellingName, int pageIndex, int numberOfWords);
 
     void clear();
 }

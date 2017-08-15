@@ -3,11 +3,12 @@ package com.binhle.vspelling.dao;
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.binhle.vspelling.common.constant.Constants;
 import com.binhle.vspelling.model.Letter;
+import com.binhle.vspelling.model.Spelling;
 import com.binhle.vspelling.model.SpellingBase;
-import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class SpellingService {
 
     /**
      * Get it's instance
+     *
      * @param activity
      * @return
      */
@@ -40,10 +42,12 @@ public class SpellingService {
     /**
      * Constructor
      */
-    private SpellingService() {}
+    private SpellingService() {
+    }
 
     /**
      * Set database for service instance.
+     *
      * @param act
      */
     private static void setDatabase(Activity act) {
@@ -55,40 +59,85 @@ public class SpellingService {
 
     /**
      * Select spelling-words by page index
+     *
      * @param pageIndex
      * @return
      */
-    public Map<String, SpellingBase> selectSpellingWordsByIndex(int pageIndex) {
-        Map<String, SpellingBase> spellingWords = new LinkedHashMap<>();
+    public Map<String, SpellingBase> selectSpellingByIndex(int pageIndex) {
+        Map<String, SpellingBase> spellings = new LinkedHashMap<>();
         // Calculate offset to query data
         int offset = pageIndex - 1;
         // Build query statement
         StringBuilder mainQuery = new StringBuilder();
-        mainQuery.append("SELECT id,name,content,image,sound FROM 'spelling-word'");
-        mainQuery.append(" ORDER BY id");
-        mainQuery.append(" LIMIT ").append(pageIndex * Constants.NUMBER_OF_WORD_PER_PAGE);
-        mainQuery.append(" OFFSET ").append(offset);
+//        mainQuery.append("SELECT id,name,content,image,sound FROM 'spelling-word'");
+//        mainQuery.append(" ORDER BY id");
+        mainQuery.append(" SELECT id,name,text,sound               ");
+        mainQuery.append(" FROM tblSpelling                        ");
+        mainQuery.append(" WHERE tblSpelling.spOrder IS NOT NULL   ");
+        mainQuery.append(" ORDER BY tblSpelling.spOrder            ");
+        mainQuery.append(" LIMIT ").append(Constants.NUMBER_OF_WORD_PER_PAGE);
+        mainQuery.append(" OFFSET ").append(offset * Constants.NUMBER_OF_WORD_PER_PAGE);
         // Fill data
-        String name, content, image, sound;
+        String name, content, image = null, sound;
         int id;
-        SpellingWord spellingWord;
+        Spelling spelling;
         Cursor cursor = database.rawQuery(mainQuery.toString(), null);
         // Loop to fill data into map
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             id = cursor.getInt(0);
-            name= cursor.getString(1);
+            name = cursor.getString(1);
             content = cursor.getString(2);
-            image = cursor.getString(3);
-            sound = cursor.getString(4);
-            spellingWord = new SpellingWord(id, name, content, image, sound);
-            spellingWords.put(name, spellingWord);
+            sound = cursor.getString(3);
+            spelling = new Spelling(id, name, content, image, sound);
+            spellings.put(name, spelling);
         }
-        return spellingWords;
+        return spellings;
+    }
+
+    public List<SpellingBase> selectWordsBySpelling(String spellingName, int pageIndex, int
+            numberOfWords) {
+        List<SpellingBase> words = new ArrayList<>();
+        // Calculate offset to query data
+        int offset = pageIndex - 1;
+        // Build query statement
+        StringBuilder mainQuery = new StringBuilder();
+
+        mainQuery.append(" SELECT tblWord.id,tblWord.name, tblWord.text");
+        mainQuery.append("  ,tblWord.image, tblWord.sound ");
+        mainQuery.append(" FROM tblSpelling, tblSpellingWord, tblWord                      ");
+        mainQuery.append(" WHERE tblSpelling.name = tblSpellingWord.spelling               ");
+        mainQuery.append(" AND tblSpellingWord.word = tblWord.name                         ");
+        mainQuery.append(" AND tblSpelling.name = '").append(spellingName).append("' ");
+        mainQuery.append(" LIMIT ").append(numberOfWords);
+        mainQuery.append(" OFFSET ").append(offset * numberOfWords);
+
+        // Fill data
+        try {
+            String name, content, image, sound;
+            int id;
+            Word word;
+            Cursor cursor = database.rawQuery(mainQuery.toString(), null);
+            // Loop to fill data into map
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToPosition(i);
+                id = cursor.getInt(0);
+                name = cursor.getString(1);
+                content = cursor.getString(2);
+                image = cursor.getString(3);
+                sound = cursor.getString(4);
+                word = new Word(id, name, content, image, sound);
+                words.add(word);
+            }
+        } catch (Exception ex) {
+            Log.e("selectWordsBySpelling", ex.getMessage());
+        }
+        return words;
     }
 
     /**
      * Select letters
+     *
      * @param pageIndex
      * @param numberOfLetters
      * @return
@@ -99,14 +148,13 @@ public class SpellingService {
         int offset = pageIndex - 1;
         // Build query statement
         StringBuilder mainQuery = new StringBuilder();
-        mainQuery.append("SELECT id,name,content,image,sound FROM 'spelling-word'");
-        mainQuery.append(" WHERE type = '1'");
-//        mainQuery.append(" ORDER BY");
+        mainQuery.append(" SELECT id,name,text,image,sound ");
+        mainQuery.append(" FROM tblLetter               ");
         mainQuery.append(" LIMIT ").append(numberOfLetters);
         mainQuery.append(" OFFSET ").append(offset);
 
         // Fill data
-        String name, content, image, sound;
+        String name, text, image, sound;
         int id;
         Letter letter;
         Cursor cursor = database.rawQuery(mainQuery.toString(), null);
@@ -114,11 +162,11 @@ public class SpellingService {
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             id = cursor.getInt(0);
-            name= cursor.getString(1);
-            content = cursor.getString(2);
+            name = cursor.getString(1);
+            text = cursor.getString(2);
             image = cursor.getString(3);
             sound = cursor.getString(4);
-            letter = new Letter(id, name, content, image, sound);
+            letter = new Letter(id, name, text, image, sound);
             letters.put(name, letter);
         }
         return letters;
@@ -126,6 +174,7 @@ public class SpellingService {
 
     /**
      * Select related words
+     *
      * @param letterName
      * @param pageIndex
      * @param numberOfWords
@@ -137,8 +186,12 @@ public class SpellingService {
         int offset = pageIndex - 1;
         // Build query statement
         StringBuilder mainQuery = new StringBuilder();
-        mainQuery.append("SELECT id,name,content,image,sound FROM 'related-word'");
-        mainQuery.append(" WHERE letter='").append(letterName).append("'");
+        mainQuery.append(" SELECT tblWord.id, tblWord.name, tblWord.text");
+        mainQuery.append("  ,tblWord.image, tblWord.sound ");
+        mainQuery.append(" FROM tblLetter, tblLetterWord, tblWord                          ");
+        mainQuery.append(" WHERE tblLetter.name = tblLetterWord.letter                     ");
+        mainQuery.append(" AND tblLetterWord.word = tblWord.name                           ");
+        mainQuery.append(" AND tblLetter.name ='").append(letterName).append("'");
         mainQuery.append(" LIMIT ").append(numberOfWords);
         mainQuery.append(" OFFSET ").append(offset);
 
@@ -151,7 +204,7 @@ public class SpellingService {
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             id = cursor.getInt(0);
-            name= cursor.getString(1);
+            name = cursor.getString(1);
             content = cursor.getString(2);
             image = cursor.getString(3);
             sound = cursor.getString(4);

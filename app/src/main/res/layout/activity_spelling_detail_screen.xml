@@ -3,7 +3,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/bg_alphabet_detail"
+              android:background="@drawable/bg_hocvan"
               android:orientation="vertical"
               android:paddingBottom="@dimen/activity_vertical_margin"
               android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,11 +12,11 @@
               tools:context="com.binhle.vspelling.activity.SpellingDetailScreen">
 
     <LinearLayout
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:orientation="horizontal"
-        android:id="@+id/navigation">
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/img_home"
@@ -40,135 +40,270 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5.5"
-        android:orientation="vertical"
-        android:id="@+id/main">
-
-        <ImageView
-            android:id="@+id/img_main"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:src="@drawable/baf"/>
-        <com.binhle.vspelling.common.customize.AutoResizeTextView
-            android:id="@+id/tv_main"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="80sp"
-            android:text="Bà"
-            style="@style/DetailSpelling"/>
-    </LinearLayout>
-    <!--similar layout-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="6"
         android:orientation="horizontal"
-        android:id="@+id/similar">
-        <!--similar1 layout-->
+        android:weightSum="6"
+        android:layout_marginTop="20dp">
+
         <LinearLayout
+            android:id="@+id/main"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:id="@+id/similar1">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="4"
-                android:id="@+id/similar1_img"/>
+            android:layout_weight="2"
+            android:orientation="vertical">
+
             <com.binhle.vspelling.common.customize.AutoResizeTextView
+                android:id="@+id/tv_main"
+                style="@style/DetailSpelling"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:id="@+id/similar1_tv"
-                style="@style/DetailSpelling"/>
+                android:text="Bà"
+                android:textSize="80sp"/>
         </LinearLayout>
-        <!--similar2 layout-->
+
         <LinearLayout
+            android:id="@+id/words"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:id="@+id/similar2">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="4"
-                android:id="@+id/similar2_img"/>
-            <com.binhle.vspelling.common.customize.AutoResizeTextView
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/word1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/similar2_tv"
-                style="@style/DetailSpelling"/>
-        </LinearLayout>
-        <!--similar3 layout-->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:id="@+id/similar3">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="4"
-                android:id="@+id/similar3_img"/>
-            <com.binhle.vspelling.common.customize.AutoResizeTextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/similar3_tv"
-                style="@style/DetailSpelling"/>
-        </LinearLayout>
-        <!--similar4 layout-->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:id="@+id/similar4">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="4"
-                android:id="@+id/similar4_img"/>
-            <com.binhle.vspelling.common.customize.AutoResizeTextView
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/word_img"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"/>
+
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
+                    android:id="@+id/word1_tv"
+                    style="@style/DetailSpelling"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/word2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/similar4_tv"
-                style="@style/DetailSpelling"/>
-        </LinearLayout>
-        <!--similar5 layout-->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:id="@+id/similar5">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="4"
-                android:id="@+id/similar5_img"/>
-            <com.binhle.vspelling.common.customize.AutoResizeTextView
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/word2_img"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"/>
+
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
+                    android:id="@+id/word2_tv"
+                    style="@style/DetailSpelling"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/word3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/similar5_tv"
-                style="@style/DetailSpelling"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/word3_img"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"/>
+
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
+                    android:id="@+id/word3_tv"
+                    style="@style/DetailSpelling"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/word4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/word4_img"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"/>
+
+                <com.binhle.vspelling.common.customize.AutoResizeTextView
+                    android:id="@+id/word4_tv"
+                    style="@style/DetailSpelling"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="5.5"-->
+    <!--android:orientation="vertical"-->
+    <!--android:id="@+id/main">-->
+    <!--<ImageView-->
+    <!--android:id="@+id/img_main"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="3"-->
+    <!--android:src="@drawable/baf"/>-->
+    <!--<com.binhle.vspelling.common.customize.AutoResizeTextView-->
+    <!--android:id="@+id/tv_main"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="80sp"-->
+    <!--android:text="Bà"-->
+    <!--style="@style/DetailSpelling"/>-->
+    <!--</LinearLayout>-->
+
+
+    <!--similar layout-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/similar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="3"-->
+    <!--android:orientation="horizontal">-->
+    <!--&lt;!&ndash;similar1 layout&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/similar1"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/similar1_img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<com.binhle.vspelling.common.customize.AutoResizeTextView-->
+    <!--android:id="@+id/similar1_tv"-->
+    <!--style="@style/DetailSpelling"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"/>-->
+    <!--</LinearLayout>-->
+    <!--&lt;!&ndash;similar2 layout&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/similar2"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/similar2_img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<com.binhle.vspelling.common.customize.AutoResizeTextView-->
+    <!--android:id="@+id/similar2_tv"-->
+    <!--style="@style/DetailSpelling"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"/>-->
+    <!--</LinearLayout>-->
+    <!--&lt;!&ndash;similar3 layout&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/similar3"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/similar3_img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<com.binhle.vspelling.common.customize.AutoResizeTextView-->
+    <!--android:id="@+id/similar3_tv"-->
+    <!--style="@style/DetailSpelling"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"/>-->
+    <!--</LinearLayout>-->
+    <!--&lt;!&ndash;similar4 layout&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/similar4"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/similar4_img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<com.binhle.vspelling.common.customize.AutoResizeTextView-->
+    <!--android:id="@+id/similar4_tv"-->
+    <!--style="@style/DetailSpelling"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"/>-->
+    <!--</LinearLayout>-->
+    <!--&lt;!&ndash;similar5 layout&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/similar5"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/similar5_img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<com.binhle.vspelling.common.customize.AutoResizeTextView-->
+    <!--android:id="@+id/similar5_tv"-->
+    <!--style="@style/DetailSpelling"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"/>-->
+    <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
 
 </LinearLayout>

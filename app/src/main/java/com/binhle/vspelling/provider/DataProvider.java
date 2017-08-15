@@ -3,17 +3,12 @@ package com.binhle.vspelling.provider;
 import android.app.Activity;
 
 import com.binhle.vspelling.dao.SpellingService;
-import com.binhle.vspelling.model.Letter;
 import com.binhle.vspelling.model.SpellingBase;
-import com.binhle.vspelling.model.SpellingWord;
-import com.binhle.vspelling.model.Word;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by BinhLe on 7/15/2017.
@@ -36,7 +31,7 @@ public class DataProvider implements DataManager {
     }
 
     // The spelling-word map
-    private Map<String, SpellingBase> spellingWordMaps = new LinkedHashMap<>();
+    private Map<String, SpellingBase> spellingMaps = new LinkedHashMap<>();
     // The letters
     private Map<String, SpellingBase> letters = new LinkedHashMap<>();
 
@@ -47,7 +42,7 @@ public class DataProvider implements DataManager {
      */
     @Override
     public Map<String, SpellingBase> getSpellingWordMap() {
-        return spellingWordMaps;
+        return spellingMaps;
     }
 
     @Override
@@ -84,6 +79,7 @@ public class DataProvider implements DataManager {
 
     /**
      * Get similar letters
+     *
      * @param letterName
      * @param numberOfLetters
      * @return
@@ -95,6 +91,7 @@ public class DataProvider implements DataManager {
 
     /**
      * Fetch related words
+     *
      * @param letterName
      * @param pageIndex
      * @param numberOfWords
@@ -109,7 +106,21 @@ public class DataProvider implements DataManager {
     }
 
     /**
+     * Fetch words list by spelling's name.
+     *
+     * @param spellingName
+     * @param pageIndex
+     * @param numberOfWords
+     * @return
+     */
+    @Override
+    public List<SpellingBase> fetchWordsBySpelling(String spellingName, int pageIndex, int numberOfWords) {
+        return this.spellingService.selectWordsBySpelling(spellingName, pageIndex, numberOfWords);
+    }
+
+    /**
      * Fetch Letters By Number
+     *
      * @param pageIndex
      * @param numberOfLetters
      * @return
@@ -123,29 +134,32 @@ public class DataProvider implements DataManager {
 
     /**
      * Fetch word by index
+     *
      * @param pageIndex
      * @return
      */
     @Override
-    public Map<String, SpellingBase> fetchWordsByIndex(int pageIndex) {
+    public Map<String, SpellingBase> fetchSpellingByIndex(int pageIndex) {
         clearSpellingWords();
-        this.spellingWordMaps = this.spellingService.selectSpellingWordsByIndex(pageIndex);
-        return spellingWordMaps;
+        this.spellingMaps = this.spellingService.selectSpellingByIndex(pageIndex);
+        return spellingMaps;
     }
 
     /**
      * Get similar spelling
+     *
      * @param wordName
      * @param numberOfSimilarWord
      * @return
      */
     @Override
     public List<String> getSimilarSpellings(String wordName, int numberOfSimilarWord) {
-        return getSimilarSpellings(spellingWordMaps, wordName, numberOfSimilarWord);
+        return getSimilarSpellings(spellingMaps, wordName, numberOfSimilarWord);
     }
 
     /**
      * Get similar spelling
+     *
      * @param spellingWordMaps
      * @param key
      * @param numberOfSimilar
@@ -204,7 +218,7 @@ public class DataProvider implements DataManager {
      * Clear spelling-words
      */
     private void clearSpellingWords() {
-        spellingWordMaps.clear();
+        spellingMaps.clear();
     }
 
     /**

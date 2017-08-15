@@ -7,15 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.binhle.vspelling.R;
-import com.binhle.vspelling.common.util.ActivityHelper;
 import com.binhle.vspelling.common.constant.Constants;
 import com.binhle.vspelling.common.customize.AutoResizeTextView;
+import com.binhle.vspelling.common.util.ActivityHelper;
 import com.binhle.vspelling.common.util.ResourceUtil;
+import com.binhle.vspelling.model.Spelling;
 import com.binhle.vspelling.model.SpellingBase;
-import com.binhle.vspelling.model.SpellingWord;
 import com.binhle.vspelling.provider.DataProvider;
 
 import java.util.HashMap;
@@ -24,16 +23,16 @@ import java.util.Map;
 
 public class SpellingScreen extends AppCompatActivity {
 
-    private Map<String, SpellingBase> wordsMap;
+    private Map<String, SpellingBase> spellingMap;
     private List<View> listOfViews;
-    private Map<String, String> wordViews;
+    private Map<String, String> spellingViews;
     private ImageView homeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spelling_screen);
-        fetchWordViews();
+        fetchSpellingViews();
         fillDataViews();
     }
 
@@ -73,7 +72,7 @@ public class SpellingScreen extends AppCompatActivity {
     /**
      * Fetch all views to show data
      */
-    private void fetchWordViews() {
+    private void fetchSpellingViews() {
         LinearLayout itemList = (LinearLayout)findViewById(R.id.list_item);
         listOfViews = ActivityHelper.fetchAllChildren(itemList, AutoResizeTextView.class);
         homeView = (ImageView) findViewById(R.id.img_home);
@@ -86,15 +85,15 @@ public class SpellingScreen extends AppCompatActivity {
     private void fillDataViews() {
         DataProvider dataProvider = DataProvider.getInstance();
         dataProvider.setupSpellingService(this);
-        wordsMap = dataProvider.fetchWordsByIndex(Constants.DEFAULT_START_PAGE_INDEX);
-        Object[] words = wordsMap.values().toArray();
-        wordViews = new HashMap<>();
+        spellingMap = dataProvider.fetchSpellingByIndex(Constants.DEFAULT_START_PAGE_INDEX);
+        Object[] spellings = spellingMap.values().toArray();
+        spellingViews = new HashMap<>();
         for (int index = 0; index < listOfViews.size(); index++) {
             AutoResizeTextView view = (AutoResizeTextView)listOfViews.get(index);
-            SpellingWord word = (SpellingWord)words[index];
-            view.setText(word.getContent() + "");
+            Spelling spelling = (Spelling)spellings[index];
+            view.setText(spelling.getContent() + "");
             String viewId = ResourceUtil.getResourceEntryName(getBaseContext(), view.getId());
-            wordViews.put(viewId, word.getName());
+            spellingViews.put(viewId, spelling.getName());
             view.setOnClickListener(TextViewOnClickListener);
         }
     }
@@ -106,12 +105,10 @@ public class SpellingScreen extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             String viewId = ResourceUtil.getResourceEntryName(getBaseContext(), v.getId());
-            Log.i("View ID", viewId);
-            String wordName = wordViews.get(viewId);
-            Log.i("Word Name", wordName);
+            String spelling = spellingViews.get(viewId);
             Intent intent = new Intent(v.getContext(), SpellingDetailScreen.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.putExtra("wordName", wordName);
+            intent.putExtra("spellingName", spelling);
             startActivity(intent);
         }
     };
