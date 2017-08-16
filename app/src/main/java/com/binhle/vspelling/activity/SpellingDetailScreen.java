@@ -207,19 +207,19 @@ public class SpellingDetailScreen extends AppCompatActivity {
      * Stop all sounds
      */
     private void stopSound() {
-        if (mediaPlayer1.isPlaying()) {
+        if (mediaPlayer1 != null && mediaPlayer1.isPlaying()) {
             mediaPlayer1.pause();
         }
-        if (mediaPlayer2.isPlaying()) {
+        if (mediaPlayer2 != null && mediaPlayer2.isPlaying()) {
             mediaPlayer2.pause();
         }
-        if (mediaPlayer3.isPlaying()) {
+        if (mediaPlayer3 != null && mediaPlayer3.isPlaying()) {
             mediaPlayer3.pause();
         }
-        if (mediaPlayer4.isPlaying()) {
+        if (mediaPlayer4 != null && mediaPlayer4.isPlaying()) {
             mediaPlayer4.pause();
         }
-        if (mediaPlayer5.isPlaying()) {
+        if (mediaPlayer5 != null && mediaPlayer5.isPlaying()) {
             mediaPlayer5.pause();
         }
     }
@@ -233,43 +233,61 @@ public class SpellingDetailScreen extends AppCompatActivity {
         mediaPlayer3 = players.get(2);
         mediaPlayer4 = players.get(3);
         mediaPlayer5 = players.get(4);
-        mediaPlayer1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mediaPlayer2.start();
-                stopAnimation();
-                findViewById(wordLayouts.get(0)).startAnimation(flip);
-            }
-        });
-        mediaPlayer2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mediaPlayer3.start();
-                stopAnimation();
-                findViewById(wordLayouts.get(1)).startAnimation(flip);
-            }
-        });
-        mediaPlayer3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mediaPlayer4.start();
-                stopAnimation();
-                findViewById(wordLayouts.get(2)).startAnimation(flip);
-            }
-        });
-        mediaPlayer4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mediaPlayer5.start();
-                stopAnimation();
-                findViewById(wordLayouts.get(3)).startAnimation(flip);
-            }
-        });
+        if (mediaPlayer1 != null) {
+            mediaPlayer1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    if (mediaPlayer2 != null) {
+                        mediaPlayer2.start();
+                        stopAnimation();
+                        findViewById(wordLayouts.get(0)).startAnimation(flip);
+                    }
+                }
+            });
+        }
+        if (mediaPlayer2 != null) {
+            mediaPlayer2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    if (mediaPlayer3 != null) {
+                        mediaPlayer3.start();
+                        stopAnimation();
+                        findViewById(wordLayouts.get(1)).startAnimation(flip);
+                    }
+                }
+            });
+        }
+        if (mediaPlayer3 != null) {
+            mediaPlayer3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    if (mediaPlayer4 != null) {
+                        mediaPlayer4.start();
+                        stopAnimation();
+                        findViewById(wordLayouts.get(2)).startAnimation(flip);
+                    }
+                }
+            });
+        }
+        if (mediaPlayer4 != null) {
+            mediaPlayer4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    if (mediaPlayer5 != null) {
+                        mediaPlayer5.start();
+                        stopAnimation();
+                        findViewById(wordLayouts.get(3)).startAnimation(flip);
+                    }
+                }
+            });
+        }
         stopSound();
-        mediaPlayer1.start();
-        TextView mainTextView = (TextView) ActivityHelper.
-                fetchAllChildren(mainLayout, AutoResizeTextView.class).get(0);
-        mainTextView.startAnimation(shake);
+        if (mediaPlayer1 != null) {
+            mediaPlayer1.start();
+            TextView mainTextView = (TextView) ActivityHelper.
+                    fetchAllChildren(mainLayout, AutoResizeTextView.class).get(0);
+            mainTextView.startAnimation(shake);
+        }
     }
 
     /**
